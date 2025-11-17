@@ -37,9 +37,11 @@ export default function EssaysPage() {
   const essays = getAllEssays()
 
   return (
-    <div className="max-w-4xl mx-auto px-6 py-12">
-      <h1 className="text-4xl md:text-5xl font-semibold text-gray-900 mb-8">Essays</h1>
-      <p className="text-xl text-gray-600 mb-12">
+    <div className="mx-auto max-w-4xl px-6 py-12">
+      <h1 className="mb-8 text-4xl font-semibold text-gray-900 md:text-5xl">
+        Essays
+      </h1>
+      <p className="mb-12 text-xl text-gray-600">
         Thoughts on AI, systems architecture, and building intelligent systems.
       </p>
 
@@ -53,4 +55,3 @@ export default function EssaysPage() {
     </div>
   )
 }
-

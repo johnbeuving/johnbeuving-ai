@@ -9,14 +9,13 @@ export default function EssayCard({ essay }: EssayCardProps) {
   return (
     <Link
       href={`/essays/${essay.slug}`}
-      className="block border border-gray-200 rounded-lg p-6 hover:border-blue-500 transition-colors group"
+      className="group block rounded-lg border border-gray-200 p-6 transition-colors hover:border-blue-500"
     >
-      <h3 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-blue-500 transition-colors">
+      <h3 className="mb-2 text-xl font-semibold text-gray-900 transition-colors group-hover:text-blue-500">
         {essay.title}
       </h3>
-      <p className="text-gray-600 text-sm mb-3">{formatDate(essay.date)}</p>
-      <p className="text-gray-600 leading-relaxed">{essay.description}</p>
+      <p className="mb-3 text-sm text-gray-600">{formatDate(essay.date)}</p>
+      <p className="leading-relaxed text-gray-600">{essay.description}</p>
     </Link>
   )
 }
-

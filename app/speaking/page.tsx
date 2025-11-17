@@ -56,33 +56,41 @@ export default function SpeakingPage() {
   ]
 
   return (
-    <div className="max-w-3xl mx-auto px-6 py-12">
-      <h1 className="text-4xl md:text-5xl font-semibold text-gray-900 mb-4">Speaking</h1>
-      <p className="text-xl text-gray-600 mb-12">
-        I speak at conferences, workshops, and events about AI systems, architecture, and
-        building intelligent systems for the real world.
+    <div className="mx-auto max-w-3xl px-6 py-12">
+      <h1 className="mb-4 text-4xl font-semibold text-gray-900 md:text-5xl">
+        Speaking
+      </h1>
+      <p className="mb-12 text-xl text-gray-600">
+        I speak at conferences, workshops, and events about AI systems,
+        architecture, and building intelligent systems for the real world.
       </p>
 
       <div className="mb-12">
-        <h2 className="text-2xl font-semibold text-gray-900 mb-6">Topics</h2>
+        <h2 className="mb-6 text-2xl font-semibold text-gray-900">Topics</h2>
         <div className="space-y-6">
           {topics.map((topic, index) => (
-            <div key={index} className="border border-gray-200 rounded-lg p-6">
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">{topic.title}</h3>
-              <p className="text-gray-600 leading-relaxed">{topic.description}</p>
+            <div key={index} className="rounded-lg border border-gray-200 p-6">
+              <h3 className="mb-2 text-xl font-semibold text-gray-900">
+                {topic.title}
+              </h3>
+              <p className="leading-relaxed text-gray-600">
+                {topic.description}
+              </p>
             </div>
           ))}
         </div>
       </div>
 
       <div className="border-t border-gray-200 pt-8">
-        <h2 className="text-2xl font-semibold text-gray-900 mb-4">Availability</h2>
-        <p className="text-gray-700 leading-relaxed mb-4">
-          I'm available for speaking engagements at conferences, workshops, and corporate events.
-          Please reach out through the contact page to discuss your event.
+        <h2 className="mb-4 text-2xl font-semibold text-gray-900">
+          Availability
+        </h2>
+        <p className="mb-4 leading-relaxed text-gray-700">
+          I'm available for speaking engagements at conferences, workshops, and
+          corporate events. Please reach out through the contact page to discuss
+          your event.
         </p>
       </div>
     </div>
   )
 }
-

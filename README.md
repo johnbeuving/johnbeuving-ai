@@ -23,7 +23,7 @@ A minimal, premium personal website built with Next.js, MDX, and Tailwind CSS. D
 
 ### Prerequisites
 
-- Node.js 18+ 
+- Node.js 18+
 - npm or yarn
 
 ### Installation
@@ -49,6 +49,22 @@ npm run build
 ```
 
 This generates a static export in the `out/` directory.
+
+### Linting and Formatting
+
+```bash
+# Run ESLint
+npm run lint
+
+# Fix ESLint issues automatically
+npm run lint:fix
+
+# Format code with Prettier
+npm run format
+
+# Check formatting without making changes
+npm run format:check
+```
 
 ## Project Structure
 
@@ -134,6 +150,7 @@ vercel
 ### Configuration
 
 The site is configured for static export (`output: 'export'` in `next.config.js`), which means:
+
 - No server-side features (API routes, server components with dynamic data)
 - Fully static HTML/CSS/JS output
 - Perfect for Vercel, Netlify, or any static hosting
@@ -160,4 +177,3 @@ Replace `public/profile.jpg` with your own profile image.
 ## License
 
 Private project — All rights reserved.
-

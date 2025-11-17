@@ -4,23 +4,27 @@
 
 @layer base {
   body {
-    @apply text-gray-700 bg-white;
+    @apply bg-white text-gray-700;
   }
-  
-  h1, h2, h3, h4, h5, h6 {
-    @apply text-gray-900 font-semibold;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-semibold text-gray-900;
   }
-  
+
   h1 {
-    @apply text-4xl md:text-5xl mb-6;
+    @apply mb-6 text-4xl md:text-5xl;
   }
-  
+
   h2 {
-    @apply text-3xl md:text-4xl mb-4 mt-8;
+    @apply mb-4 mt-8 text-3xl md:text-4xl;
   }
-  
+
   h3 {
-    @apply text-2xl md:text-3xl mb-3 mt-6;
+    @apply mb-3 mt-6 text-2xl md:text-3xl;
   }
 }
-

@@ -1,6 +1,12 @@
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
-import { getEssaySlugs, getEssayBySlug, getEssayFrontmatter, getOGImagePath, formatDate } from '@/lib/mdx'
+import {
+  getEssaySlugs,
+  getEssayBySlug,
+  getEssayFrontmatter,
+  getOGImagePath,
+  formatDate,
+} from '@/lib/mdx'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import { mdxComponents } from '@/components/MDXContent'
 
@@ -49,7 +55,7 @@ export async function generateMetadata({
         canonical: url,
       },
     }
-  } catch (error) {
+  } catch {
     return {
       title: 'Essay Not Found',
       description: 'The requested essay could not be found.',
@@ -57,20 +63,28 @@ export async function generateMetadata({
   }
 }
 
-export default async function EssayPage({ params }: { params: { slug: string } }) {
+export default async function EssayPage({
+  params,
+}: {
+  params: { slug: string }
+}) {
   const { slug } = params
 
   try {
     const { metadata, content } = getEssayBySlug(slug)
 
     return (
-      <article className="max-w-3xl mx-auto px-6 py-12">
+      <article className="mx-auto max-w-3xl px-6 py-12">
         <header className="mb-12">
-          <h1 className="text-4xl md:text-5xl font-semibold text-gray-900 mb-4">
+          <h1 className="mb-4 text-4xl font-semibold text-gray-900 md:text-5xl">
             {metadata.title}
           </h1>
-          <p className="text-gray-500 text-sm mb-2">{formatDate(metadata.date)}</p>
-          <p className="text-gray-600 text-lg leading-relaxed">{metadata.description}</p>
+          <p className="mb-2 text-sm text-gray-500">
+            {formatDate(metadata.date)}
+          </p>
+          <p className="text-lg leading-relaxed text-gray-600">
+            {metadata.description}
+          </p>
         </header>
 
         <div className="prose prose-lg max-w-none">
@@ -78,8 +92,7 @@ export default async function EssayPage({ params }: { params: { slug: string } }
         </div>
       </article>
     )
-  } catch (error) {
+  } catch {
     notFound()
   }
 }
-
