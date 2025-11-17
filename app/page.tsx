@@ -6,10 +6,12 @@ import EssayCard from '@/components/EssayCard'
 
 export const metadata: Metadata = {
   title: 'John Beuving — AI Systems Architect & CTO',
-  description: 'Building AI systems that bridge the physical world and intelligent models: from sensors and radar to multimodal and agentic AI.',
+  description:
+    'Building AI systems that bridge the physical world and intelligent models: from sensors and radar to multimodal and agentic AI.',
   openGraph: {
     title: 'John Beuving — AI Systems Architect & CTO',
-    description: 'Building AI systems that bridge the physical world and intelligent models: from sensors and radar to multimodal and agentic AI.',
+    description:
+      'Building AI systems that bridge the physical world and intelligent models: from sensors and radar to multimodal and agentic AI.',
     type: 'website',
     url: 'https://johnbeuving.ai',
     images: [
@@ -24,7 +26,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'John Beuving — AI Systems Architect & CTO',
-    description: 'Building AI systems that bridge the physical world and intelligent models: from sensors and radar to multimodal and agentic AI.',
+    description:
+      'Building AI systems that bridge the physical world and intelligent models: from sensors and radar to multimodal and agentic AI.',
     images: ['https://johnbeuving.ai/og/default.png'],
   },
   alternates: {
@@ -36,9 +39,9 @@ export default function HomePage() {
   const essays = getAllEssays().slice(0, 3)
 
   return (
-    <div className="max-w-4xl mx-auto px-6 py-12">
-      <div className="max-w-3xl mb-16">
-        <div className="flex items-start gap-6 mb-6">
+    <div className="mx-auto max-w-4xl px-6 py-12">
+      <div className="mb-16 max-w-3xl">
+        <div className="mb-6 flex items-start gap-6">
           <div className="flex-shrink-0">
             <Image
               src="/profile.jpg"
@@ -50,37 +53,39 @@ export default function HomePage() {
             />
           </div>
           <div className="flex-1">
-            <h1 className="text-5xl md:text-6xl font-semibold text-gray-900 mb-4">
+            <h1 className="mb-4 text-5xl font-semibold text-gray-900 md:text-6xl">
               John Beuving
             </h1>
-            <p className="text-2xl md:text-3xl text-gray-600 mb-2">
+            <p className="mb-2 text-2xl text-gray-600 md:text-3xl">
               AI Systems Architect & CTO
             </p>
             <p className="text-xl text-gray-500">
-            Building AI systems that bridge the physical world and intelligent models: from sensors and radar to multimodal and agentic AI
+              Building AI systems that bridge the physical world and intelligent
+              models: from sensors and radar to multimodal and agentic AI
             </p>
           </div>
         </div>
       </div>
 
-      <div className="grid md:grid-cols-3 gap-6 mb-16">
+      <div className="mb-16 grid gap-6 md:grid-cols-3">
         <Link
           href="/essays"
-          className="border border-gray-200 rounded-lg p-6 hover:border-blue-500 transition-colors group"
+          className="group rounded-lg border border-gray-200 p-6 transition-colors hover:border-blue-500"
         >
-          <h2 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-blue-500 transition-colors">
+          <h2 className="mb-2 text-xl font-semibold text-gray-900 transition-colors group-hover:text-blue-500">
             Essays
           </h2>
           <p className="text-gray-600">
-            Thoughts on AI, systems architecture, and building intelligent systems.
+            Thoughts on AI, systems architecture, and building intelligent
+            systems.
           </p>
         </Link>
 
         <Link
           href="/about"
-          className="border border-gray-200 rounded-lg p-6 hover:border-blue-500 transition-colors group"
+          className="group rounded-lg border border-gray-200 p-6 transition-colors hover:border-blue-500"
         >
-          <h2 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-blue-500 transition-colors">
+          <h2 className="mb-2 text-xl font-semibold text-gray-900 transition-colors group-hover:text-blue-500">
             About
           </h2>
           <p className="text-gray-600">
@@ -90,9 +95,9 @@ export default function HomePage() {
 
         <Link
           href="/speaking"
-          className="border border-gray-200 rounded-lg p-6 hover:border-blue-500 transition-colors group"
+          className="group rounded-lg border border-gray-200 p-6 transition-colors hover:border-blue-500"
         >
-          <h2 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-blue-500 transition-colors">
+          <h2 className="mb-2 text-xl font-semibold text-gray-900 transition-colors group-hover:text-blue-500">
             Speaking
           </h2>
           <p className="text-gray-600">
@@ -101,8 +106,10 @@ export default function HomePage() {
         </Link>
       </div>
 
-      <div className="mt-12 mb-8">
-        <h2 className="text-3xl font-semibold text-gray-900 mb-6">Latest Essays</h2>
+      <div className="mb-8 mt-12">
+        <h2 className="mb-6 text-3xl font-semibold text-gray-900">
+          Latest Essays
+        </h2>
         <div className="space-y-6">
           {essays.length > 0 ? (
             essays.map((essay) => <EssayCard key={essay.slug} essay={essay} />)
@@ -114,4 +121,3 @@ export default function HomePage() {
     </div>
   )
 }
-

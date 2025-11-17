@@ -21,7 +21,10 @@ export function getEssaySlugs(): string[] {
     .map((file) => file.replace(/\.mdx$/, ''))
 }
 
-export function getEssayBySlug(slug: string): { metadata: EssayMetadata; content: string } {
+export function getEssayBySlug(slug: string): {
+  metadata: EssayMetadata
+  content: string
+} {
   const fullPath = path.join(essaysDirectory, `${slug}.mdx`)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
   const { data, content } = matter(fileContents)
@@ -91,4 +94,3 @@ export function formatDate(dateString: string): string {
     return dateString
   }
 }
-

@@ -33,43 +33,49 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="max-w-3xl mx-auto px-6 py-12">
-      <h1 className="text-4xl md:text-5xl font-semibold text-gray-900 mb-8">About</h1>
-      
+    <div className="mx-auto max-w-3xl px-6 py-12">
+      <h1 className="mb-8 text-4xl font-semibold text-gray-900 md:text-5xl">
+        About
+      </h1>
+
       <div className="prose prose-lg max-w-none">
-        <p className="text-gray-700 leading-relaxed mb-6">
-          I'm an AI Systems Architect and CTO with a passion for building intelligent systems
-          that bridge the gap between cutting-edge AI research and real-world applications.
+        <p className="mb-6 leading-relaxed text-gray-700">
+          I'm an AI Systems Architect and CTO with a passion for building
+          intelligent systems that bridge the gap between cutting-edge AI
+          research and real-world applications.
         </p>
-        
-        <p className="text-gray-700 leading-relaxed mb-6">
-          My work focuses on creating AI systems that understand and interact with the physical
-          world—combining sensor data, perception, and reasoning to build practical intelligence.
-          I've spent years working on systems that integrate radar, computer vision, and large
-          language models to solve complex problems in healthcare, autonomous systems, and beyond.
+
+        <p className="mb-6 leading-relaxed text-gray-700">
+          My work focuses on creating AI systems that understand and interact
+          with the physical world—combining sensor data, perception, and
+          reasoning to build practical intelligence. I've spent years working on
+          systems that integrate radar, computer vision, and large language
+          models to solve complex problems in healthcare, autonomous systems,
+          and beyond.
         </p>
-        
-        <p className="text-gray-700 leading-relaxed mb-6">
-          I believe the future of AI lies not just in language models, but in systems that can
-          perceive, reason about, and act in the real world. This requires a deep understanding
-          of both the theoretical foundations of AI and the practical constraints of deploying
-          systems at scale.
+
+        <p className="mb-6 leading-relaxed text-gray-700">
+          I believe the future of AI lies not just in language models, but in
+          systems that can perceive, reason about, and act in the real world.
+          This requires a deep understanding of both the theoretical foundations
+          of AI and the practical constraints of deploying systems at scale.
         </p>
-        
-        <p className="text-gray-700 leading-relaxed mb-6">
-          When I'm not building systems, I write about AI, speak at conferences, and contribute
-          to the open-source community. I'm always interested in connecting with others who share
-          a passion for pushing the boundaries of what's possible with AI.
+
+        <p className="mb-6 leading-relaxed text-gray-700">
+          When I'm not building systems, I write about AI, speak at conferences,
+          and contribute to the open-source community. I'm always interested in
+          connecting with others who share a passion for pushing the boundaries
+          of what's possible with AI.
         </p>
-        
-        <div className="mt-8 pt-6 border-t border-gray-200">
-          <p className="text-gray-700 leading-relaxed mb-4">Connect with me:</p>
-          <p className="text-gray-700 leading-relaxed">
+
+        <div className="mt-8 border-t border-gray-200 pt-6">
+          <p className="mb-4 leading-relaxed text-gray-700">Connect with me:</p>
+          <p className="leading-relaxed text-gray-700">
             <a
               href="https://www.linkedin.com/in/john-beuving-7716633/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-500 hover:text-blue-600 underline"
+              className="text-blue-500 underline hover:text-blue-600"
             >
               LinkedIn
             </a>
@@ -79,4 +85,3 @@ export default function AboutPage() {
     </div>
   )
 }
-

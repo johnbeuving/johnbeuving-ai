@@ -1,17 +1,17 @@
 export default function Footer() {
   return (
-    <footer className="border-t border-gray-200 py-8 mt-24">
-      <div className="max-w-4xl mx-auto px-6 text-center">
-        <div className="flex items-center justify-center gap-4 mb-4">
+    <footer className="mt-24 border-t border-gray-200 py-8">
+      <div className="mx-auto max-w-4xl px-6 text-center">
+        <div className="mb-4 flex items-center justify-center gap-4">
           <a
             href="https://www.linkedin.com/in/john-beuving-7716633/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-500 hover:text-blue-500 transition-colors"
+            className="text-gray-500 transition-colors hover:text-blue-500"
             aria-label="LinkedIn"
           >
             <svg
-              className="w-5 h-5"
+              className="h-5 w-5"
               fill="currentColor"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
@@ -20,9 +20,10 @@ export default function Footer() {
             </svg>
           </a>
         </div>
-        <p className="text-gray-500 text-sm">© {new Date().getFullYear()} John Beuving. All rights reserved.</p>
+        <p className="text-sm text-gray-500">
+          © {new Date().getFullYear()} John Beuving. All rights reserved.
+        </p>
       </div>
     </footer>
   )
 }
-

@@ -8,10 +8,12 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'John Beuving — AI Systems Architect & CTO',
-  description: 'Building AI systems that bridge the physical world and intelligent models: from sensors and radar to multimodal and agentic AI.',
+  description:
+    'Building AI systems that bridge the physical world and intelligent models: from sensors and radar to multimodal and agentic AI.',
   openGraph: {
     title: 'John Beuving — AI Systems Architect & CTO',
-    description: 'Building AI systems that bridge the physical world and intelligent models: from sensors and radar to multimodal and agentic AI.',
+    description:
+      'Building AI systems that bridge the physical world and intelligent models: from sensors and radar to multimodal and agentic AI.',
     type: 'website',
     url: 'https://johnbeuving.ai',
     images: [
@@ -26,7 +28,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'John Beuving — AI Systems Architect & CTO',
-    description: 'Building AI systems that bridge the physical world and intelligent models: from sensors and radar to multimodal and agentic AI.',
+    description:
+      'Building AI systems that bridge the physical world and intelligent models: from sensors and radar to multimodal and agentic AI.',
     images: ['https://johnbeuving.ai/og/default.png'],
   },
   alternates: {
@@ -42,7 +45,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="min-h-screen flex flex-col">
+        <div className="flex min-h-screen flex-col">
           <Header />
           <main className="flex-grow">{children}</main>
           <Footer />
@@ -51,4 +54,3 @@ export default function RootLayout({
     </html>
   )
 }
-
