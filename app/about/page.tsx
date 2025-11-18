@@ -19,7 +19,9 @@ export default function AboutPage() {
         <p className="mb-4 leading-relaxed text-gray-700 sm:mb-6">
           I'm an AI Systems Architect and CTO with a passion for building
           intelligent systems that bridge the gap between cutting-edge AI
-          research and real-world applications.
+          research and real-world applications. I'm currently Founder & CTO at
+          Valtes, a healthtech startup focused on supporting caregivers and
+          healthcare providers through innovative AI solutions.
         </p>
 
         <p className="mb-4 leading-relaxed text-gray-700 sm:mb-6">
@@ -27,8 +29,10 @@ export default function AboutPage() {
           with the physical world—combining sensor data, perception, and
           reasoning to build practical intelligence. I've spent years working on
           systems that integrate radar, computer vision, and large language
-          models to solve complex problems in healthcare, autonomous systems,
-          and beyond.
+          models to solve complex problems, with a particular focus on
+          healthcare applications where AI can make a meaningful difference in
+          people's lives. I've also worked on autonomous systems and other
+          domains where perception meets intelligence.
         </p>
 
         <p className="mb-4 leading-relaxed text-gray-700 sm:mb-6">
