@@ -3,7 +3,7 @@ import { ComponentPropsWithoutRef } from 'react'
 export const mdxComponents = {
   h1: ({ children, className, ...props }: ComponentPropsWithoutRef<'h1'>) => (
     <h1
-      className={`mb-6 mt-8 text-4xl font-semibold text-gray-900 md:text-5xl ${className || ''}`}
+      className={`mb-4 mt-6 break-words text-2xl font-semibold text-gray-900 sm:mb-6 sm:mt-8 sm:text-3xl md:text-4xl lg:text-5xl ${className || ''}`}
       {...props}
     >
       {children}
@@ -11,7 +11,7 @@ export const mdxComponents = {
   ),
   h2: ({ children, className, ...props }: ComponentPropsWithoutRef<'h2'>) => (
     <h2
-      className={`mb-4 mt-8 text-3xl font-semibold text-gray-900 md:text-4xl ${className || ''}`}
+      className={`mb-3 mt-6 break-words text-xl font-semibold text-gray-900 sm:mb-4 sm:mt-8 sm:text-2xl md:text-3xl lg:text-4xl ${className || ''}`}
       {...props}
     >
       {children}
@@ -19,7 +19,7 @@ export const mdxComponents = {
   ),
   h3: ({ children, className, ...props }: ComponentPropsWithoutRef<'h3'>) => (
     <h3
-      className={`mb-3 mt-6 text-2xl font-semibold text-gray-900 md:text-3xl ${className || ''}`}
+      className={`mb-2 mt-4 break-words text-lg font-semibold text-gray-900 sm:mb-3 sm:mt-6 sm:text-xl md:text-2xl lg:text-3xl ${className || ''}`}
       {...props}
     >
       {children}
@@ -27,7 +27,7 @@ export const mdxComponents = {
   ),
   p: ({ children, className, ...props }: ComponentPropsWithoutRef<'p'>) => (
     <p
-      className={`mb-4 leading-relaxed text-gray-700 ${className || ''}`}
+      className={`mb-3 break-words leading-relaxed text-gray-700 sm:mb-4 ${className || ''}`}
       {...props}
     >
       {children}
@@ -41,7 +41,7 @@ export const mdxComponents = {
   }: ComponentPropsWithoutRef<'a'>) => (
     <a
       href={href}
-      className={`text-blue-500 underline hover:text-blue-600 ${className || ''}`}
+      className={`break-words text-blue-500 underline hover:text-blue-600 ${className || ''}`}
       {...props}
     >
       {children}
@@ -86,7 +86,7 @@ export const mdxComponents = {
     ...props
   }: ComponentPropsWithoutRef<'code'>) => (
     <code
-      className={`rounded bg-gray-100 px-1.5 py-0.5 font-mono text-sm text-gray-800 ${className || ''}`}
+      className={`break-words rounded bg-gray-100 px-1.5 py-0.5 font-mono text-xs text-gray-800 sm:text-sm ${className || ''}`}
       {...props}
     >
       {children}
@@ -94,7 +94,7 @@ export const mdxComponents = {
   ),
   pre: ({ children, className, ...props }: ComponentPropsWithoutRef<'pre'>) => (
     <pre
-      className={`mb-4 overflow-x-auto rounded-lg bg-gray-100 p-4 ${className || ''}`}
+      className={`mb-4 overflow-x-auto rounded-lg bg-gray-100 p-3 text-xs sm:p-4 sm:text-sm ${className || ''}`}
       {...props}
     >
       {children}

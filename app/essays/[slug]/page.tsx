@@ -9,6 +9,8 @@ import {
 } from '@/lib/mdx'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import { mdxComponents } from '@/components/MDXContent'
+import { generateMetadata as genMetadata } from '@/lib/metadata'
+import { SITE } from '@/lib/constants'
 
 export async function generateStaticParams() {
   const slugs = getEssaySlugs()
@@ -25,36 +27,16 @@ export async function generateMetadata({
   try {
     const post = getEssayFrontmatter(params.slug)
     const ogImagePath = getOGImagePath(params.slug)
-    const ogImageUrl = `https://johnbeuving.ai${ogImagePath}`
-    const url = `https://johnbeuving.ai/essays/${params.slug}`
+    const ogImageUrl = `${SITE.url}${ogImagePath}`
 
-    return {
+    return genMetadata({
       title: post.title,
       description: post.description,
-      openGraph: {
-        title: post.title,
-        description: post.description,
-        type: 'article',
-        url,
-        images: [
-          {
-            url: ogImageUrl,
-            width: 1200,
-            height: 630,
-            alt: post.title,
-          },
-        ],
-      },
-      twitter: {
-        card: 'summary_large_image',
-        title: post.title,
-        description: post.description,
-        images: [ogImageUrl],
-      },
-      alternates: {
-        canonical: url,
-      },
-    }
+      path: `/essays/${params.slug}`,
+      ogImage: ogImageUrl,
+      ogImageAlt: post.title,
+      type: 'article',
+    })
   } catch {
     return {
       title: 'Essay Not Found',
@@ -74,20 +56,20 @@ export default async function EssayPage({
     const { metadata, content } = getEssayBySlug(slug)
 
     return (
-      <article className="mx-auto max-w-3xl px-6 py-12">
-        <header className="mb-12">
-          <h1 className="mb-4 text-4xl font-semibold text-gray-900 md:text-5xl">
+      <article className="mx-auto max-w-3xl px-4 py-8 sm:px-6 sm:py-12">
+        <header className="mb-8 sm:mb-12">
+          <h1 className="mb-3 text-2xl font-semibold text-gray-900 sm:mb-4 sm:text-3xl md:text-4xl lg:text-5xl">
             {metadata.title}
           </h1>
-          <p className="mb-2 text-sm text-gray-500">
+          <p className="mb-2 text-xs text-gray-500 sm:text-sm">
             {formatDate(metadata.date)}
           </p>
-          <p className="text-lg leading-relaxed text-gray-600">
+          <p className="text-base leading-relaxed text-gray-600 sm:text-lg">
             {metadata.description}
           </p>
         </header>
 
-        <div className="prose prose-lg max-w-none">
+        <div className="prose prose-sm sm:prose-base md:prose-lg max-w-none">
           <MDXRemote source={content} components={mdxComponents} />
         </div>
       </article>

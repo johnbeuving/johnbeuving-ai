@@ -1,10 +1,12 @@
+import { SITE } from '@/lib/constants'
+
 export default function Footer() {
   return (
-    <footer className="mt-24 border-t border-gray-200 py-8">
-      <div className="mx-auto max-w-4xl px-6 text-center">
+    <footer className="mt-12 border-t border-gray-200 py-6 sm:mt-24 sm:py-8">
+      <div className="mx-auto max-w-4xl px-4 text-center sm:px-6">
         <div className="mb-4 flex items-center justify-center gap-4">
           <a
-            href="https://www.linkedin.com/in/john-beuving-7716633/"
+            href={SITE.linkedIn}
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-500 transition-colors hover:text-blue-500"
@@ -21,7 +23,7 @@ export default function Footer() {
           </a>
         </div>
         <p className="text-sm text-gray-500">
-          © {new Date().getFullYear()} John Beuving. All rights reserved.
+          © {new Date().getFullYear()} {SITE.name}. All rights reserved.
         </p>
       </div>
     </footer>
