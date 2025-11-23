@@ -1,0 +1,138 @@
+---
+title: "The Multi-Agent moment: what Google Antigravity means for real-world AI"
+description: "Google Antigravity marks the shift from monolithic LLMs to agentic, orchestrated AI systems. Here’s why multi-agent architectures will define AI in 2026."
+date: "2025-11-23"
+tags: ["multi-agent", "ai-systems", "antigravity", "orchestration", "LLMs"]
+readingTime: 8
+draft: false
+---
+
+# The multi-agent moment
+
+Agents give large language models a purpose. Agents extend LLMs with memory, tools, and iterative reasoning, enabling them to solve complex tasks more reliably. That is the evolution of the popular models from Anthropic, OpenAI, and Google.
+
+These large monolithic models cannot solve long-range multi-step tasks with high reliability. To solve these larger problems, they are broken down into smaller tasks that an agent (and its tooling) can solve with high reliability. 
+
+Google Antigravity is the first mainstream confirmation of something AI researchers have known for a long time: the future belongs to systems, not monoliths.
+
+This article explores:
+- What Antigravity actually represents  
+- Why multi-agent AI beats monolithic LLMs  
+- What this means for real-world AI in 2026  
+
+---
+
+# 1. What Google Antigravity actually is
+
+Antigravity is not just another AI model or tool on top of a large model. It is designed as an integrated development environment with the goal of helping developers move from code to orchestrating and coordinating AI agents.
+
+It’s a coordination layer of: 
+- many small agents  
+- each with narrow but reliable skills  
+- orchestrated by a supervisory scheduler  
+- with memory + intent handling  
+- with error-correction loops  
+- with re-planning built in  
+
+This is the *opposite* of the single-model paradigm.
+
+---
+
+# 2. Why multi-agent beats monolithic LLMs
+
+Before Antigravity, LLMs used for complex tasks often employed techniques such as Chain-of-Thought (CoT) or agentic variants like ReAct (reasoning + acting). In these approaches, the LLM reasons internally—its own thought process—and then acts accordingly. The issue was that this process was a black box: if the agent made a mistake, the human, even after a long read of the logs, had limited options to debug or correct the underlying error.
+
+Current large language models still tend to hallucinate. When these platforms also get large tasks, they try to break them down into subtasks. But the combination of hallucination and the larger number of tasks tends to break down the final direction and therefore also the solution. Besides the hallucinations and the often partially incorrect answers, these models cannot really keep a state of the system (only within the context window). With each step in the process the quality keeps degrading. As mentioned, the context window can still help and larger context windows can give extra details that are needed in later steps. The problem is that they are needed earlier in the process. Having a larger context window can also help reduce hallucinations and therefore act as a partial grounding mechanism for the model.
+
+Multi-agent systems, on the other hand, decompose larger tasks into more manageable, smaller tasks. The tasks are performed by an agent. This agent can still make mistakes, but these errors remain local. Because the coordination layer oversees the agents and their tasks, it is able to retry failing steps.
+
+For the first time since transformers, this is a *paradigm shift*.
+
+---
+
+# 3. Orchestration > model size
+
+In the coming months many companies will follow suit and more and more multi-agent systems will come to market. This shows that the road to more reliability emerges from the decomposition of the overall problem or task. With supervision by the coordination layer, correctness emerges. By keeping a central place for knowledge, this structure can provide more long-range coherence. This in turn means that more tasks can be handled for a single problem. Scientific results already show that agents outperform end-to-end models. Google Antigravity confirms this in production.
+
+**Pipelines matter more than parameters.**
+
+---
+
+# 4. Why this matters for real-world AI
+
+This orchestration from Google is another step towards standardization or industrialization. Many companies have already designed custom orchestration layers to handle their multi-agent systems. The platform from Google raises the bar and is usually already battle-tested and therefore comes with established best practices for agent communication, which can also improve custom orchestration layers. 
+
+Another pattern that is now being implemented more often is the step from routing and simple responses (this is usually the act step) towards a more elaborate plan–act–self-verify loop. This already improves common usage, where an agent can now plan to fill in a web form, actually fill it in, and verify the result. 
+
+---
+
+# 5. The architecture of real-world multi-agent systems
+
+So given Google Antigravity as a current commercial reference, how does the architecture of such a system look? First, let's break it down into the components we all know. A typical agentic system consists of:
+- **Tools:** External functional nodes (APIs, IDE, browser).  
+- **LLMs:** Used as **skills** (providing reasoning and language generation).  
+- **Agents:** Coordinating and executing specific tasks (the executors).  
+- **Supervisors:** Managing the full workflow (the scheduler/orchestrator).  
+- **Memory:** Providing long-range stability and state retention.
+
+Antigravity fits this architecture perfectly. It calls the intermediate results **artifacts**. The most important part of this artifact system is that it resolves one of the key problems of previous agent systems: opacity. Artifacts turn that messy internal thought process into human-readable data objects. Examples are plans, code diffs, and even screenshots.
+
+The real breakthrough is not “better reasoning.” It is **structured reasoning** using artifacts.
+
+---
+
+# 6. The implications for CTOs, healthcare, and municipalities
+
+CTOs across sectors face the same pressure:  
+**AI capability is rising fast, but reliability and governance lag behind.**
+
+Multi-agent systems change the blueprint for AI teams:
+
+- Hire **system architects**, not prompt engineers  
+- Invest in orchestration frameworks, not just models  
+- Design for grounding: logs, context, reproducibility  
+- Shift KPIs: from “model accuracy” → “pipeline reliability”  
+- Move governance to the **agent level**, not the model level  
+- Expect a growing need for observability and audit trails  
+
+This is the playbook for 2026–2030.
+
+|**Old Playbook (Model-Centric)**|**New Playbook (Pipeline-Centric / Agentic)**|**Why the Change?**|
+|---|---|---|
+|**Focus:** Optimizing prompts for a single LLM (Prompt Engineering).|**Focus:** Hiring **System Architects** to design and manage agent interactions.|Multi-agent systems are complex distributed systems, requiring architectural expertise, not just language skill.|
+|**Investment:** Just procuring the best LLM via API.|**Investment:** Investing in **orchestration frameworks** (like Antigravity) and agent tooling.|Reliability is built at the coordination layer, not inside the LLM.|
+|**KPI:** "Model accuracy" or hallucination rate.|**KPI:** "Pipeline reliability" and task completion rate.|If one agent fails, the pipeline must self-heal or flag the error reliably, shifting the metric to end-to-end success.|
+|**Governance:** Model-level guardrails (e.g., system prompts).|**Governance:** Moving governance to the **agent level** (specialized agents enforce policies).|Governance becomes contextual and executable, with dedicated agents ensuring compliance on specific tasks.|
+|**Monitoring:** Simple logs of API calls.|**Monitoring:** Expecting a growing need for **observability** and structured **audit trails** (artifacts).|You need to audit the _reasoning_ and _steps_ of every agent, not just the final output.|
+|**Design:** Focus on the final output text.|**Design:** Mandating **grounding**: structured logs, external context, and reproducibility.|Trust requires verifiable proof of execution and input context.|
+
+Agentic architectures will become the default choice for any large-scale, multi-step AI workflow.
+
+This also has sector-specific implications and this is important for sectors dealing with high-stakes decisions and regulatory oversight (for example, companies like Valtes).
+
+**a) Healthcare**  
+Reliability and grounding are crucial: a recommendation or support for informal care must be grounded in the client information available. Structured reasoning helps make AI more transparent and shows which data points are used to make an informed decision or advice.
+
+**b) Municipalities**  
+This is where we bring informal carers and municipalities together. Each municipality must provide transparency. Audit trails of decisions become a public record. Structured reasoning directly addresses this audit trail and therefore becomes the acceptable foundation for large-scale enterprise AI.
+
+---
+
+# 7. Conclusion: The paradigm shift is here
+
+Antigravity is the first public validation of something long in the making:
+**AI is moving from brains → organisms → ecosystems.**
+And ecosystems outperform individual “super-brains.”
+
+The future of intelligent systems is:
+
+- agentic  
+- orchestrated  
+- modular  
+- reliable  
+- grounded in context  
+- built as pipelines, not black boxes  
+
+And 2026 will be the year this becomes the standard architecture.
+
+The ultimate goal of this transition is to convert the raw _capability_ of a large language model into the _trustworthiness_ of an automated pipeline. Structured reasoning is the blueprint for that trust.

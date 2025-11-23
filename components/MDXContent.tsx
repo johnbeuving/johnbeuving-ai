@@ -100,4 +100,45 @@ export const mdxComponents = {
       {children}
     </pre>
   ),
+  table: ({ children, className, ...props }: ComponentPropsWithoutRef<'table'>) => (
+    <div className="my-6 overflow-x-auto">
+      <table
+        className={`min-w-full divide-y divide-gray-200 border border-gray-300 ${className || ''}`}
+        {...props}
+      >
+        {children}
+      </table>
+    </div>
+  ),
+  thead: ({ children, className, ...props }: ComponentPropsWithoutRef<'thead'>) => (
+    <thead className={`bg-gray-50 ${className || ''}`} {...props}>
+      {children}
+    </thead>
+  ),
+  tbody: ({ children, className, ...props }: ComponentPropsWithoutRef<'tbody'>) => (
+    <tbody className={`divide-y divide-gray-200 bg-white ${className || ''}`} {...props}>
+      {children}
+    </tbody>
+  ),
+  tr: ({ children, className, ...props }: ComponentPropsWithoutRef<'tr'>) => (
+    <tr className={className || ''} {...props}>
+      {children}
+    </tr>
+  ),
+  th: ({ children, className, ...props }: ComponentPropsWithoutRef<'th'>) => (
+    <th
+      className={`px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-gray-700 sm:px-6 ${className || ''}`}
+      {...props}
+    >
+      {children}
+    </th>
+  ),
+  td: ({ children, className, ...props }: ComponentPropsWithoutRef<'td'>) => (
+    <td
+      className={`px-4 py-3 text-sm text-gray-700 sm:px-6 ${className || ''}`}
+      {...props}
+    >
+      {children}
+    </td>
+  ),
 }

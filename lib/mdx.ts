@@ -4,28 +4,46 @@ import matter from 'gray-matter'
 
 const essaysDirectory = path.join(process.cwd(), 'content/essays')
 
+export type Locale = 'en' | 'nl'
+
 export interface EssayMetadata {
   title: string
   date: string
   description: string
   slug: string
+  locale: Locale
 }
 
-export function getEssaySlugs(): string[] {
+export function getAvailableLocales(): Locale[] {
   if (!fs.existsSync(essaysDirectory)) {
     return []
   }
   return fs
-    .readdirSync(essaysDirectory)
+    .readdirSync(essaysDirectory, { withFileTypes: true })
+    .filter((dirent) => dirent.isDirectory())
+    .map((dirent) => dirent.name as Locale)
+    .filter((locale): locale is Locale => locale === 'en' || locale === 'nl')
+}
+
+export function getEssaySlugs(locale: Locale): string[] {
+  const localeDirectory = path.join(essaysDirectory, locale)
+  if (!fs.existsSync(localeDirectory)) {
+    return []
+  }
+  return fs
+    .readdirSync(localeDirectory)
     .filter((file) => file.endsWith('.mdx'))
     .map((file) => file.replace(/\.mdx$/, ''))
 }
 
-export function getEssayBySlug(slug: string): {
+export function getEssayBySlug(slug: string, locale: Locale): {
   metadata: EssayMetadata
   content: string
 } {
-  const fullPath = path.join(essaysDirectory, `${slug}.mdx`)
+  const fullPath = path.join(essaysDirectory, locale, `${slug}.mdx`)
+  if (!fs.existsSync(fullPath)) {
+    throw new Error(`Essay not found: ${slug} in locale ${locale}`)
+  }
   const fileContents = fs.readFileSync(fullPath, 'utf8')
   const { data, content } = matter(fileContents)
 
@@ -45,31 +63,43 @@ export function getEssayBySlug(slug: string): {
       date: dateString,
       description: data.description || '',
       slug,
+      locale,
     },
     content,
   }
 }
 
-export function getAllEssays(): EssayMetadata[] {
-  const slugs = getEssaySlugs()
-  const essays = slugs
-    .map((slug) => {
-      const { metadata } = getEssayBySlug(slug)
-      return metadata
-    })
-    .sort((a, b) => {
-      if (a.date < b.date) {
-        return 1
-      } else {
-        return -1
-      }
-    })
+export function getAllEssays(locale?: Locale): EssayMetadata[] {
+  const locales = locale ? [locale] : getAvailableLocales()
+  const allEssays: EssayMetadata[] = []
 
-  return essays
+  for (const loc of locales) {
+    const slugs = getEssaySlugs(loc)
+    const essays = slugs
+      .map((slug) => {
+        try {
+          const { metadata } = getEssayBySlug(slug, loc)
+          return metadata
+        } catch {
+          return null
+        }
+      })
+      .filter((essay): essay is EssayMetadata => essay !== null)
+
+    allEssays.push(...essays)
+  }
+
+  return allEssays.sort((a, b) => {
+    if (a.date < b.date) {
+      return 1
+    } else {
+      return -1
+    }
+  })
 }
 
-export function getEssayFrontmatter(slug: string): EssayMetadata {
-  const { metadata } = getEssayBySlug(slug)
+export function getEssayFrontmatter(slug: string, locale: Locale): EssayMetadata {
+  const { metadata } = getEssayBySlug(slug, locale)
   return metadata
 }
 
@@ -81,11 +111,11 @@ export function getOGImagePath(slug: string): string {
   return '/og/default.png'
 }
 
-export function formatDate(dateString: string): string {
+export function formatDate(dateString: string, locale: Locale = 'en'): string {
   if (!dateString) return ''
   try {
     const date = new Date(dateString)
-    return date.toLocaleDateString('en-US', {
+    return date.toLocaleDateString(locale === 'nl' ? 'nl-NL' : 'en-US', {
       year: 'numeric',
       month: 'long',
       day: 'numeric',
