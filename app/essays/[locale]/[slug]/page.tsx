@@ -6,33 +6,42 @@ import {
   getEssayFrontmatter,
   getOGImagePath,
   formatDate,
+  type Locale,
 } from '@/lib/mdx'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import { mdxComponents } from '@/components/MDXContent'
 import { generateMetadata as genMetadata } from '@/lib/metadata'
 import { SITE } from '@/lib/constants'
+import remarkGfm from 'remark-gfm'
 
 export async function generateStaticParams() {
-  const slugs = getEssaySlugs()
-  return slugs.map((slug) => ({
-    slug,
-  }))
+  const locales: Locale[] = ['en', 'nl']
+  const params: { locale: Locale; slug: string }[] = []
+
+  for (const locale of locales) {
+    const slugs = getEssaySlugs(locale)
+    for (const slug of slugs) {
+      params.push({ locale, slug })
+    }
+  }
+
+  return params
 }
 
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string }
+  params: { locale: Locale; slug: string }
 }): Promise<Metadata> {
   try {
-    const post = getEssayFrontmatter(params.slug)
+    const post = getEssayFrontmatter(params.slug, params.locale)
     const ogImagePath = getOGImagePath(params.slug)
     const ogImageUrl = `${SITE.url}${ogImagePath}`
 
     return genMetadata({
       title: post.title,
       description: post.description,
-      path: `/essays/${params.slug}`,
+      path: `/essays/${params.locale}/${params.slug}`,
       ogImage: ogImageUrl,
       ogImageAlt: post.title,
       type: 'article',
@@ -48,12 +57,12 @@ export async function generateMetadata({
 export default async function EssayPage({
   params,
 }: {
-  params: { slug: string }
+  params: { locale: Locale; slug: string }
 }) {
-  const { slug } = params
+  const { slug, locale } = params
 
   try {
-    const { metadata, content } = getEssayBySlug(slug)
+    const { metadata, content } = getEssayBySlug(slug, locale)
 
     return (
       <article className="mx-auto max-w-3xl px-4 py-8 sm:px-6 sm:py-12">
@@ -62,7 +71,7 @@ export default async function EssayPage({
             {metadata.title}
           </h1>
           <p className="mb-2 text-xs text-gray-500 sm:text-sm">
-            {formatDate(metadata.date)}
+            {formatDate(metadata.date, locale)}
           </p>
           <p className="text-base leading-relaxed text-gray-600 sm:text-lg">
             {metadata.description}
@@ -70,7 +79,15 @@ export default async function EssayPage({
         </header>
 
         <div className="prose prose-sm sm:prose-base md:prose-lg max-w-none">
-          <MDXRemote source={content} components={mdxComponents} />
+          <MDXRemote
+            source={content}
+            components={mdxComponents}
+            options={{
+              mdxOptions: {
+                remarkPlugins: [remarkGfm],
+              },
+            }}
+          />
         </div>
       </article>
     )
@@ -78,3 +95,4 @@ export default async function EssayPage({
     notFound()
   }
 }
+
