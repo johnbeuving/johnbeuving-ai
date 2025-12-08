@@ -31,17 +31,18 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: { locale: Locale; slug: string }
+  params: Promise<{ locale: Locale; slug: string }>
 }): Promise<Metadata> {
   try {
-    const post = getEssayFrontmatter(params.slug, params.locale)
-    const ogImagePath = getOGImagePath(params.slug)
+    const { slug, locale } = await params
+    const post = getEssayFrontmatter(slug, locale)
+    const ogImagePath = getOGImagePath(slug)
     const ogImageUrl = `${SITE.url}${ogImagePath}`
 
     return genMetadata({
       title: post.title,
       description: post.description,
-      path: `/essays/${params.locale}/${params.slug}`,
+      path: `/essays/${locale}/${slug}`,
       ogImage: ogImageUrl,
       ogImageAlt: post.title,
       type: 'article',
@@ -57,9 +58,9 @@ export async function generateMetadata({
 export default async function EssayPage({
   params,
 }: {
-  params: { locale: Locale; slug: string }
+  params: Promise<{ locale: Locale; slug: string }>
 }) {
-  const { slug, locale } = params
+  const { slug, locale } = await params
 
   try {
     const { metadata, content } = getEssayBySlug(slug, locale)

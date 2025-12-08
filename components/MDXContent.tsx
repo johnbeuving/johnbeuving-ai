@@ -141,4 +141,17 @@ export const mdxComponents = {
       {children}
     </td>
   ),
+  img: ({
+    src,
+    alt,
+    className,
+    ...props
+  }: ComponentPropsWithoutRef<'img'>) => (
+    <img
+      src={src}
+      alt={alt || ''}
+      className={`my-6 w-full rounded-lg ${className || ''}`}
+      {...props}
+    />
+  ),
 }

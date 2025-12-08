@@ -1,0 +1,146 @@
+<svg viewBox="0 0 1400 700" xmlns="http://www.w3.org/2000/svg">
+  <!-- Title -->
+  <text x="700" y="35" font-size="26" font-weight="bold" text-anchor="middle" fill="#1a1a1a">
+    The Million-Step Challenge: Towers of Hanoi with 20 Disks
+  </text>
+  
+  <text x="700" y="60" font-size="14" text-anchor="middle" fill="#666">
+    One mistake invalidates everything. MAKER achieved perfection.
+  </text>
+  
+  <!-- Background -->
+  <rect x="50" y="80" width="1300" height="300" fill="#fafafa" stroke="#e0e0e0" stroke-width="2" rx="10"/>
+  
+  <!-- Towers of Hanoi Visual -->
+  <g id="hanoi">
+    <!-- Base platform -->
+    <rect x="250" y="340" width="900" height="20" fill="#6d4c41" stroke="#4e342e" stroke-width="2" rx="4"/>
+    
+    <!-- Three pegs -->
+    <rect x="400" y="180" width="20" height="165" fill="#6d4c41" stroke="#4e342e" stroke-width="2" rx="2"/>
+    <rect x="690" y="180" width="20" height="165" fill="#6d4c41" stroke="#4e342e" stroke-width="2" rx="2"/>
+    <rect x="980" y="180" width="20" height="165" fill="#6d4c41" stroke="#4e342e" stroke-width="2" rx="2"/>
+    
+    <!-- Peg labels -->
+    <text x="410" y="375" font-size="18" font-weight="bold" text-anchor="middle" fill="#4e342e">Peg A</text>
+    <text x="700" y="375" font-size="18" font-weight="bold" text-anchor="middle" fill="#4e342e">Peg B</text>
+    <text x="990" y="375" font-size="18" font-weight="bold" text-anchor="middle" fill="#4e342e">Peg C</text>
+    
+    <!-- Stack of 20 disks on peg A (colorful gradient) -->
+    <ellipse cx="410" cy="330" rx="130" ry="9" fill="#b71c1c" stroke="#7f0000" stroke-width="1.5"/>
+    <ellipse cx="410" cy="321" rx="124" ry="9" fill="#c62828" stroke="#8e0000" stroke-width="1.5"/>
+    <ellipse cx="410" cy="312" rx="118" ry="9" fill="#d32f2f" stroke="#9a0007" stroke-width="1.5"/>
+    <ellipse cx="410" cy="303" rx="112" ry="9" fill="#e53935" stroke="#ab000d" stroke-width="1.5"/>
+    <ellipse cx="410" cy="294" rx="106" ry="9" fill="#f44336" stroke="#ba000d" stroke-width="1.5"/>
+    <ellipse cx="410" cy="285" rx="100" ry="9" fill="#e91e63" stroke="#ad1457" stroke-width="1.5"/>
+    <ellipse cx="410" cy="276" rx="94" ry="9" fill="#9c27b0" stroke="#6a1b9a" stroke-width="1.5"/>
+    <ellipse cx="410" cy="267" rx="88" ry="9" fill="#673ab7" stroke="#4527a0" stroke-width="1.5"/>
+    <ellipse cx="410" cy="258" rx="82" ry="9" fill="#3f51b5" stroke="#283593" stroke-width="1.5"/>
+    <ellipse cx="410" cy="249" rx="76" ry="9" fill="#2196f3" stroke="#1565c0" stroke-width="1.5"/>
+    <ellipse cx="410" cy="240" rx="70" ry="9" fill="#03a9f4" stroke="#0277bd" stroke-width="1.5"/>
+    <ellipse cx="410" cy="231" rx="64" ry="9" fill="#00bcd4" stroke="#00838f" stroke-width="1.5"/>
+    <ellipse cx="410" cy="222" rx="58" ry="9" fill="#009688" stroke="#00695c" stroke-width="1.5"/>
+    <ellipse cx="410" cy="213" rx="52" ry="9" fill="#4caf50" stroke="#2e7d32" stroke-width="1.5"/>
+    <ellipse cx="410" cy="204" rx="46" ry="9" fill="#8bc34a" stroke="#558b2f" stroke-width="1.5"/>
+    <ellipse cx="410" cy="195" rx="40" ry="9" fill="#cddc39" stroke="#9e9d24" stroke-width="1.5"/>
+    <ellipse cx="410" cy="186" rx="34" ry="9" fill="#ffeb3b" stroke="#f57f17" stroke-width="1.5"/>
+    <ellipse cx="410" cy="177" rx="28" ry="9" fill="#ffc107" stroke="#ff6f00" stroke-width="1.5"/>
+    <ellipse cx="410" cy="168" rx="22" ry="9" fill="#ff9800" stroke="#e65100" stroke-width="1.5"/>
+    <ellipse cx="410" cy="159" rx="16" ry="9" fill="#ff5722" stroke="#bf360c" stroke-width="1.5"/>
+    
+    <!-- Label for disk count -->
+    <rect x="340" y="105" width="140" height="40" fill="#1976d2" rx="6"/>
+    <text x="410" y="130" font-size="16" font-weight="bold" text-anchor="middle" fill="white">
+      20 Disks
+    </text>
+  </g>
+  
+  <!-- Mathematical Reality Box -->
+  <rect x="150" y="410" width="1100" height="120" fill="#e3f2fd" stroke="#1976d2" stroke-width="3" rx="10"/>
+  
+  <text x="700" y="440" font-size="20" font-weight="bold" text-anchor="middle" fill="#0d47a1">
+    The Mathematical Reality
+  </text>
+  
+  <!-- Two columns of facts -->
+  <g id="facts-left">
+    <text x="200" y="470" font-size="15" text-anchor="start" fill="#1565c0">
+      ✓ 20 disks = 1,048,575 required moves (2²⁰ - 1)
+    </text>
+    <text x="200" y="495" font-size="15" text-anchor="start" fill="#1565c0">
+      ✓ Each move depends on ALL previous moves
+    </text>
+    <text x="200" y="520" font-size="15" text-anchor="start" fill="#1565c0">
+      ✓ One error = entire solution invalidated
+    </text>
+  </g>
+  
+  <g id="facts-right">
+    <text x="750" y="470" font-size="15" text-anchor="start" fill="#1565c0">
+      ✗ Traditional agents fail after ~500 steps
+    </text>
+    <text x="750" y="495" font-size="15" text-anchor="start" fill="#1565c0">
+      ✗ Errors compound with each step
+    </text>
+    <text x="750" y="520" font-size="15" text-anchor="start" fill="#1565c0">
+      ✓ MAKER: 1,048,575 steps with ZERO errors
+    </text>
+  </g>
+  
+  <!-- Performance Comparison Timeline -->
+  <g id="timeline">
+    <text x="700" y="570" font-size="20" font-weight="bold" text-anchor="middle" fill="#1a1a1a">
+      Performance Comparison: Traditional vs MAKER
+    </text>
+    
+    <!-- Scale line -->
+    <line x1="150" y1="650" x2="1250" y2="650" stroke="#bdbdbd" stroke-width="3"/>
+    
+    <!-- Scale markers -->
+    <line x1="150" y1="640" x2="150" y2="660" stroke="#999" stroke-width="2"/>
+    <text x="150" y="680" font-size="11" text-anchor="middle" fill="#666">0</text>
+    
+    <line x1="400" y1="640" x2="400" y2="660" stroke="#999" stroke-width="2"/>
+    <text x="400" y="680" font-size="11" text-anchor="middle" fill="#666">250K</text>
+    
+    <line x1="650" y1="640" x2="650" y2="660" stroke="#999" stroke-width="2"/>
+    <text x="650" y="680" font-size="11" text-anchor="middle" fill="#666">500K</text>
+    
+    <line x1="900" y1="640" x2="900" y2="660" stroke="#999" stroke-width="2"/>
+    <text x="900" y="680" font-size="11" text-anchor="middle" fill="#666">750K</text>
+    
+    <line x1="1150" y1="640" x2="1150" y2="660" stroke="#999" stroke-width="2"/>
+    <text x="1150" y="680" font-size="11" text-anchor="middle" fill="#666">1M</text>
+    
+    <line x1="1250" y1="640" x2="1250" y2="660" stroke="#999" stroke-width="2"/>
+    <text x="1250" y="680" font-size="11" text-anchor="middle" fill="#666">1,048,575</text>
+    
+    <!-- Traditional Agent track -->
+    <text x="80" y="610" font-size="13" font-weight="bold" text-anchor="end" fill="#666">Traditional</text>
+    <text x="80" y="625" font-size="13" font-weight="bold" text-anchor="end" fill="#666">Agent</text>
+    
+    <rect x="150" y="600" width="120" height="30" fill="#4caf50" opacity="0.8" rx="3"/>
+    <text x="210" y="620" font-size="12" text-anchor="middle" fill="white" font-weight="bold">~500 steps</text>
+    
+    <!-- Failure explosion -->
+    <text x="285" y="618" font-size="35" text-anchor="start">💥</text>
+    <rect x="325" y="600" width="100" height="30" fill="#f44336" opacity="0.9" rx="3"/>
+    <text x="375" y="620" font-size="12" text-anchor="middle" fill="white" font-weight="bold">FAILURE</text>
+    
+    <!-- Fade out to show it never completes -->
+    <rect x="425" y="605" width="825" height="20" fill="#f44336" opacity="0.1" rx="3"/>
+    
+    <!-- MAKER track -->
+    <text x="80" y="650" font-size="13" font-weight="bold" text-anchor="end" fill="#666">MAKER</text>
+    
+    <!-- Full progress bar -->
+    <rect x="150" y="630" width="1100" height="30" fill="#4caf50" opacity="0.9" rx="3"/>
+    <text x="700" y="650" font-size="12" text-anchor="middle" fill="white" font-weight="bold">1,048,575 steps - ZERO ERRORS</text>
+    
+    <!-- Success checkmark -->
+    <text x="1265" y="653" font-size="35" text-anchor="start">✅</text>
+  </g>
+  
+  <!-- Bottom summary -->
+  <rect x="200" y="695" width="1000" height="1" fill="#e0e0e0"/>
+</svg>

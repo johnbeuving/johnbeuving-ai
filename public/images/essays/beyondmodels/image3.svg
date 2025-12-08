@@ -1,0 +1,247 @@
+<svg viewBox="0 0 1400 800" xmlns="http://www.w3.org/2000/svg">
+  <!-- Title -->
+  <text x="700" y="35" font-size="26" font-weight="bold" text-anchor="middle" fill="#1a1a1a">
+    MAKER's Three-Layer Defense Architecture
+  </text>
+  
+  <text x="700" y="60" font-size="14" text-anchor="middle" fill="#666">
+    How extreme decomposition + validation + error correction achieves zero-error execution
+  </text>
+  
+  <!-- LAYER 3: Red-Flagging (Top) -->
+  <g id="layer3">
+    <rect x="80" y="90" width="1240" height="180" fill="#ffebee" stroke="#f44336" stroke-width="4" rx="12"/>
+    
+    <!-- Layer header -->
+    <rect x="100" y="100" width="300" height="50" fill="#f44336" rx="8"/>
+    <text x="250" y="125" font-size="20" font-weight="bold" text-anchor="middle" fill="white">
+      LAYER 3: Red-Flagging
+    </text>
+    <text x="250" y="145" font-size="12" text-anchor="middle" fill="white">
+      Proactive Error Detection and Correction
+    </text>
+    
+    <!-- Detection examples -->
+    <g id="detection-types">
+      <rect x="120" y="170" width="220" height="80" fill="#fff" stroke="#f44336" stroke-width="2" rx="6"/>
+      <text x="230" y="195" font-size="16" font-weight="bold" text-anchor="middle" fill="#c62828">
+        🚩 Detect Anomaly
+      </text>
+      <text x="230" y="218" font-size="11" text-anchor="middle" fill="#666">• Inconsistent output</text>
+      <text x="230" y="233" font-size="11" text-anchor="middle" fill="#666">• Contradicts context</text>
+      <text x="230" y="248" font-size="11" text-anchor="middle" fill="#666">• Semantic violation</text>
+      
+      <text x="360" y="215" font-size="22" text-anchor="middle" fill="#f44336">→</text>
+      
+      <rect x="390" y="170" width="220" height="80" fill="#e3f2fd" stroke="#2196f3" stroke-width="2" rx="6"/>
+      <text x="500" y="195" font-size="16" font-weight="bold" text-anchor="middle" fill="#1565c0">
+        ⚡ Route Alternative
+      </text>
+      <text x="500" y="218" font-size="11" text-anchor="middle" fill="#666">• Different agent</text>
+      <text x="500" y="233" font-size="11" text-anchor="middle" fill="#666">• Different tools</text>
+      <text x="500" y="248" font-size="11" text-anchor="middle" fill="#666">• Different approach</text>
+      
+      <text x="630" y="215" font-size="22" text-anchor="middle" fill="#f44336">→</text>
+      
+      <rect x="660" y="170" width="220" height="80" fill="#fff8e1" stroke="#ff9800" stroke-width="2" rx="6"/>
+      <text x="770" y="195" font-size="16" font-weight="bold" text-anchor="middle" fill="#e65100">
+        🔄 Backtrack and Retry
+      </text>
+      <text x="770" y="218" font-size="11" text-anchor="middle" fill="#666">• Explore alternatives</text>
+      <text x="770" y="233" font-size="11" text-anchor="middle" fill="#666">• Learn from failure</text>
+      <text x="770" y="248" font-size="11" text-anchor="middle" fill="#666">• Escalate if needed</text>
+      
+      <text x="900" y="215" font-size="22" text-anchor="middle" fill="#f44336">→</text>
+      
+      <rect x="930" y="170" width="230" height="80" fill="#e8f5e9" stroke="#4caf50" stroke-width="2" rx="6"/>
+      <text x="1045" y="195" font-size="16" font-weight="bold" text-anchor="middle" fill="#2e7d32">
+        ✓ Success
+      </text>
+      <text x="1045" y="218" font-size="11" text-anchor="middle" fill="#666">System becomes</text>
+      <text x="1045" y="233" font-size="11" text-anchor="middle" fill="#666">antifragile through</text>
+      <text x="1045" y="248" font-size="11" text-anchor="middle" fill="#666">error correction loops</text>
+    </g>
+  </g>
+  
+  <!-- Connection arrow down -->
+  <path d="M 700 280 L 700 305" stroke="#666" stroke-width="4" marker-end="url(#arrowdown)"/>
+  <text x="750" y="297" font-size="12" fill="#666" font-style="italic">Feeds validation layer</text>
+  
+  <!-- LAYER 2: K-threshold Error Mitigation (Middle) -->
+  <g id="layer2">
+    <rect x="80" y="315" width="1240" height="180" fill="#fff8e1" stroke="#ff9800" stroke-width="4" rx="12"/>
+    
+    <!-- Layer header -->
+    <rect x="100" y="325" width="350" height="50" fill="#ff9800" rx="8"/>
+    <text x="275" y="350" font-size="20" font-weight="bold" text-anchor="middle" fill="white">
+      LAYER 2: K-threshold Validation
+    </text>
+    <text x="275" y="370" font-size="12" text-anchor="middle" fill="white">
+      Verification Gates Before Proceeding
+    </text>
+    
+    <!-- Validation flow -->
+    <g id="validation-flow">
+      <!-- Input -->
+      <rect x="120" y="400" width="100" height="60" fill="#e3f2fd" stroke="#2196f3" stroke-width="2" rx="6"/>
+      <text x="170" y="425" font-size="13" text-anchor="middle" fill="#1565c0" font-weight="bold">Agent</text>
+      <text x="170" y="442" font-size="13" text-anchor="middle" fill="#1565c0" font-weight="bold">Output</text>
+      
+      <path d="M 220 430 L 270 430" stroke="#666" stroke-width="3" marker-end="url(#arrow)"/>
+      
+      <!-- Validation gate 1 -->
+      <path d="M 270 395 L 320 430 L 270 465 L 220 430 Z" fill="#fff" stroke="#ff9800" stroke-width="3"/>
+      <text x="270" y="430" font-size="24" text-anchor="middle">🛡️</text>
+      <text x="270" y="485" font-size="11" text-anchor="middle" fill="#666">Gate 1</text>
+      
+      <!-- Pass path -->
+      <path d="M 320 420 L 380 420" stroke="#4caf50" stroke-width="4" marker-end="url(#arrowgreen)"/>
+      <text x="350" y="410" font-size="11" fill="#4caf50" font-weight="bold">Pass</text>
+      
+      <!-- Validation gate 2 -->
+      <path d="M 380 395 L 430 430 L 380 465 L 330 430 Z" fill="#fff" stroke="#ff9800" stroke-width="3"/>
+      <text x="380" y="430" font-size="24" text-anchor="middle">🛡️</text>
+      <text x="380" y="485" font-size="11" text-anchor="middle" fill="#666">Gate 2</text>
+      
+      <path d="M 430 420 L 490 420" stroke="#4caf50" stroke-width="4" marker-end="url(#arrowgreen)"/>
+      <text x="460" y="410" font-size="11" fill="#4caf50" font-weight="bold">Pass</text>
+      
+      <!-- Validation gate 3 -->
+      <path d="M 490 395 L 540 430 L 490 465 L 440 430 Z" fill="#fff" stroke="#ff9800" stroke-width="3"/>
+      <text x="490" y="430" font-size="24" text-anchor="middle">🛡️</text>
+      <text x="490" y="485" font-size="11" text-anchor="middle" fill="#666">Gate K</text>
+      
+      <path d="M 540 420 L 600 420" stroke="#4caf50" stroke-width="4" marker-end="url(#arrowgreen)"/>
+      <text x="570" y="410" font-size="11" fill="#4caf50" font-weight="bold">K checks pass</text>
+      
+      <!-- Success output -->
+      <rect x="600" y="400" width="110" height="60" fill="#e8f5e9" stroke="#4caf50" stroke-width="3" rx="6"/>
+      <text x="655" y="425" font-size="14" text-anchor="middle" fill="#2e7d32" font-weight="bold">✓ Validated</text>
+      <text x="655" y="445" font-size="11" text-anchor="middle" fill="#2e7d32">Continue to</text>
+      <text x="655" y="458" font-size="11" text-anchor="middle" fill="#2e7d32">next step</text>
+      
+      <!-- Fail path from gate 2 -->
+      <path d="M 380 465 L 380 490" stroke="#f44336" stroke-width="3" marker-end="url(#arrowred)"/>
+      <text x="395" y="480" font-size="10" fill="#f44336" font-weight="bold">Fail</text>
+      
+      <rect x="330" y="500" width="100" height="45" fill="#ffebee" stroke="#f44336" stroke-width="2" rx="5"/>
+      <text x="380" y="520" font-size="12" text-anchor="middle" fill="#c62828" font-weight="bold">Block and</text>
+      <text x="380" y="535" font-size="12" text-anchor="middle" fill="#c62828" font-weight="bold">Send to L3</text>
+    </g>
+    
+    <!-- Info box -->
+    <rect x="780" y="390" width="380" height="90" fill="#fff3e0" stroke="#ff9800" stroke-width="2" rx="6"/>
+    <text x="970" y="415" font-size="14" font-weight="bold" text-anchor="middle" fill="#e65100">
+      K Validation Checks:
+    </text>
+    <text x="800" y="440" font-size="11" text-anchor="start" fill="#666">• Type and format correctness</text>
+    <text x="800" y="455" font-size="11" text-anchor="start" fill="#666">• Semantic consistency</text>
+    <text x="800" y="470" font-size="11" text-anchor="start" fill="#666">• Constraint satisfaction</text>
+    
+    <text x="1010" y="440" font-size="11" text-anchor="start" fill="#666">• Context alignment</text>
+    <text x="1010" y="455" font-size="11" text-anchor="start" fill="#666">• Logic verification</text>
+    <text x="1010" y="470" font-size="11" text-anchor="start" fill="#666">• Goal conformance</text>
+  </g>
+  
+  <!-- Connection arrow down -->
+  <path d="M 700 505 L 700 530" stroke="#666" stroke-width="4" marker-end="url(#arrowdown)"/>
+  <text x="750" y="522" font-size="12" fill="#666" font-style="italic">Feeds micro-agents</text>
+  
+  <!-- LAYER 1: Maximal Agentic Decomposition (Bottom) -->
+  <g id="layer1">
+    <rect x="80" y="540" width="1240" height="200" fill="#e8f5e9" stroke="#4caf50" stroke-width="4" rx="12"/>
+    
+    <!-- Layer header -->
+    <rect x="100" y="550" width="400" height="50" fill="#4caf50" rx="8"/>
+    <text x="300" y="575" font-size="20" font-weight="bold" text-anchor="middle" fill="white">
+      LAYER 1: Maximal Agentic Decomposition
+    </text>
+    <text x="300" y="595" font-size="12" text-anchor="middle" fill="white">
+      Extreme Task Breakdown - Near-Zero Failure Rate
+    </text>
+    
+    <!-- Micro-agent grid -->
+    <g id="microagent-grid">
+      <!-- Row 1 -->
+      <rect x="120" y="620" width="110" height="40" fill="#fff" stroke="#4caf50" stroke-width="2" rx="4"/>
+      <text x="175" y="643" font-size="10" text-anchor="middle" fill="#2e7d32" font-weight="bold">Move disk 1</text>
+      
+      <rect x="245" y="620" width="110" height="40" fill="#fff" stroke="#4caf50" stroke-width="2" rx="4"/>
+      <text x="300" y="643" font-size="10" text-anchor="middle" fill="#2e7d32" font-weight="bold">Validate state</text>
+      
+      <rect x="370" y="620" width="110" height="40" fill="#fff" stroke="#4caf50" stroke-width="2" rx="4"/>
+      <text x="425" y="643" font-size="10" text-anchor="middle" fill="#2e7d32" font-weight="bold">Check rule</text>
+      
+      <rect x="495" y="620" width="110" height="40" fill="#fff" stroke="#4caf50" stroke-width="2" rx="4"/>
+      <text x="550" y="643" font-size="10" text-anchor="middle" fill="#2e7d32" font-weight="bold">Log action</text>
+      
+      <rect x="620" y="620" width="110" height="40" fill="#fff" stroke="#4caf50" stroke-width="2" rx="4"/>
+      <text x="675" y="643" font-size="10" text-anchor="middle" fill="#2e7d32" font-weight="bold">Update peg A</text>
+      
+      <rect x="745" y="620" width="110" height="40" fill="#fff" stroke="#4caf50" stroke-width="2" rx="4"/>
+      <text x="800" y="643" font-size="10" text-anchor="middle" fill="#2e7d32" font-weight="bold">Update peg B</text>
+      
+      <rect x="870" y="620" width="110" height="40" fill="#fff" stroke="#4caf50" stroke-width="2" rx="4"/>
+      <text x="925" y="643" font-size="10" text-anchor="middle" fill="#2e7d32" font-weight="bold">Verify move</text>
+      
+      <rect x="995" y="620" width="110" height="40" fill="#fff" stroke="#4caf50" stroke-width="2" rx="4"/>
+      <text x="1050" y="643" font-size="10" text-anchor="middle" fill="#2e7d32" font-weight="bold">Store state</text>
+      
+      <rect x="1120" y="620" width="110" height="40" fill="#fff" stroke="#4caf50" stroke-width="2" rx="4"/>
+      <text x="1175" y="643" font-size="10" text-anchor="middle" fill="#2e7d32" font-weight="bold">Pass context</text>
+      
+      <!-- Row 2 -->
+      <rect x="120" y="675" width="110" height="40" fill="#fff" stroke="#4caf50" stroke-width="2" rx="4"/>
+      <text x="175" y="698" font-size="10" text-anchor="middle" fill="#2e7d32" font-weight="bold">Compare</text>
+      
+      <rect x="245" y="675" width="110" height="40" fill="#fff" stroke="#4caf50" stroke-width="2" rx="4"/>
+      <text x="300" y="698" font-size="10" text-anchor="middle" fill="#2e7d32" font-weight="bold">Calculate</text>
+      
+      <rect x="370" y="675" width="110" height="40" fill="#fff" stroke="#4caf50" stroke-width="2" rx="4"/>
+      <text x="425" y="698" font-size="10" text-anchor="middle" fill="#2e7d32" font-weight="bold">Transform</text>
+      
+      <rect x="495" y="675" width="110" height="40" fill="#fff" stroke="#4caf50" stroke-width="2" rx="4"/>
+      <text x="550" y="698" font-size="10" text-anchor="middle" fill="#2e7d32" font-weight="bold">Validate</text>
+      
+      <rect x="620" y="675" width="110" height="40" fill="#fff" stroke="#4caf50" stroke-width="2" rx="4"/>
+      <text x="675" y="698" font-size="10" text-anchor="middle" fill="#2e7d32" font-weight="bold">Format</text>
+      
+      <rect x="745" y="675" width="110" height="40" fill="#fff" stroke="#4caf50" stroke-width="2" rx="4"/>
+      <text x="800" y="698" font-size="10" text-anchor="middle" fill="#2e7d32" font-weight="bold">Serialize</text>
+      
+      <rect x="870" y="675" width="110" height="40" fill="#fff" stroke="#4caf50" stroke-width="2" rx="4"/>
+      <text x="925" y="698" font-size="10" text-anchor="middle" fill="#2e7d32" font-weight="bold">Check type</text>
+      
+      <rect x="995" y="675" width="110" height="40" fill="#fff" stroke="#4caf50" stroke-width="2" rx="4"/>
+      <text x="1050" y="698" font-size="10" text-anchor="middle" fill="#2e7d32" font-weight="bold">Route next</text>
+      
+      <rect x="1120" y="675" width="110" height="40" fill="#fff" stroke="#4caf50" stroke-width="2" rx="4"/>
+      <text x="1175" y="698" font-size="10" text-anchor="middle" fill="#2e7d32" font-weight="bold">Continue...</text>
+      
+      <!-- Dots indicating more -->
+      <text x="1260" y="660" font-size="30" text-anchor="middle" fill="#4caf50">...</text>
+    </g>
+  </g>
+  
+  <!-- Key principle -->
+  <rect x="200" y="755" width="1000" height="35" fill="#1976d2" rx="6"/>
+  <text x="700" y="778" font-size="14" font-weight="bold" text-anchor="middle" fill="white">
+    Each agent: ONE task, minimal cognitive load, near-100% reliability - System achieves zero-error execution
+  </text>
+  
+  <!-- Arrow markers -->
+  <defs>
+    <marker id="arrowdown" markerWidth="12" markerHeight="12" refX="6" refY="6" orient="auto">
+      <polygon points="0 0, 12 0, 6 12" fill="#666"/>
+    </marker>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#666"/>
+    </marker>
+    <marker id="arrowgreen" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#4caf50"/>
+    </marker>
+    <marker id="arrowred" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+      <polygon points="0 0, 10 0, 5 10" fill="#f44336"/>
+    </marker>
+  </defs>
+</svg>
