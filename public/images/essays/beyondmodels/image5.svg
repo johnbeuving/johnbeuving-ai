@@ -1,0 +1,232 @@
+<svg viewBox="0 0 1400 850" xmlns="http://www.w3.org/2000/svg">
+  <!-- Title -->
+  <text x="700" y="35" font-size="26" font-weight="bold" text-anchor="middle" fill="#1a1a1a">
+    Red-Flagging: MAKER's Immune System
+  </text>
+  
+  <text x="700" y="60" font-size="14" text-anchor="middle" fill="#666">
+    Proactive error detection with intelligent correction routing - errors don't cascade, they trigger improvement
+  </text>
+  
+  <!-- Main Process Flow -->
+  <g id="main-flow">
+    <!-- Stage 1: Agent Execution -->
+    <rect x="150" y="100" width="220" height="90" fill="#e3f2fd" stroke="#2196f3" stroke-width="3" rx="10"/>
+    <text x="260" y="130" font-size="18" font-weight="bold" text-anchor="middle" fill="#1565c0">
+      1. Agent Executes
+    </text>
+    <text x="260" y="155" font-size="12" text-anchor="middle" fill="#666">
+      Micro-agent performs
+    </text>
+    <text x="260" y="173" font-size="12" text-anchor="middle" fill="#666">
+      focused subtask and
+    </text>
+    <text x="260" y="191" font-size="12" text-anchor="middle" fill="#666">
+      produces output
+    </text>
+    
+    <!-- Arrow to detection -->
+    <path d="M 370 145 L 430 145" stroke="#666" stroke-width="4" marker-end="url(#arrow)"/>
+    
+    <!-- Stage 2: Red Flag Scanner -->
+    <rect x="430" y="100" width="280" height="90" fill="#fff3e0" stroke="#ff9800" stroke-width="4" rx="10"/>
+    <text x="570" y="125" font-size="20" font-weight="bold" text-anchor="middle" fill="#e65100">
+      🚩 Red Flag Scanner
+    </text>
+    <text x="570" y="150" font-size="13" text-anchor="middle" fill="#666">
+      Analyzes output for anomalies,
+    </text>
+    <text x="570" y="170" font-size="13" text-anchor="middle" fill="#666">
+      contradictions, semantic errors,
+    </text>
+    <text x="570" y="190" font-size="13" text-anchor="middle" fill="#666">
+      and constraint violations
+    </text>
+  </g>
+  
+  <!-- Three Decision Paths -->
+  
+  <!-- Path 1: Valid Output (Green) - Center -->
+  <g id="path-valid">
+    <path d="M 570 190 L 570 240" stroke="#4caf50" stroke-width="5" marker-end="url(#arrowgreen)"/>
+    <text x="600" y="220" font-size="13" font-weight="bold" fill="#4caf50">Clean</text>
+    
+    <rect x="470" y="250" width="200" height="90" fill="#e8f5e9" stroke="#4caf50" stroke-width="4" rx="10"/>
+    <text x="570" y="280" font-size="28" text-anchor="middle" fill="#2e7d32">✅</text>
+    <text x="570" y="305" font-size="16" font-weight="bold" text-anchor="middle" fill="#2e7d32">
+      Output Valid
+    </text>
+    <text x="570" y="328" font-size="12" text-anchor="middle" fill="#666">
+      All checks passed
+    </text>
+    
+    <path d="M 570 340 L 570 380" stroke="#4caf50" stroke-width="4" marker-end="url(#arrowgreen)"/>
+    
+    <rect x="470" y="390" width="200" height="60" fill="#c8e6c9" stroke="#4caf50" stroke-width="3" rx="8"/>
+    <text x="570" y="415" font-size="15" font-weight="bold" text-anchor="middle" fill="#1b5e20">
+      ✓ Continue to
+    </text>
+    <text x="570" y="435" font-size="15" font-weight="bold" text-anchor="middle" fill="#1b5e20">
+      Next Step
+    </text>
+  </g>
+  
+  <!-- Path 2: Suspicious Pattern (Yellow) - Left -->
+  <g id="path-suspicious">
+    <path d="M 480 190 L 300 240" stroke="#ff9800" stroke-width="5" marker-end="url(#arrowyellow)"/>
+    <text x="350" y="215" font-size="13" font-weight="bold" fill="#ff9800">Suspicious</text>
+    
+    <rect x="120" y="250" width="230" height="90" fill="#fff8e1" stroke="#ff9800" stroke-width="4" rx="10"/>
+    <text x="235" y="280" font-size="28" text-anchor="middle" fill="#f57c00">⚠️</text>
+    <text x="235" y="305" font-size="16" font-weight="bold" text-anchor="middle" fill="#e65100">
+      Suspicious Pattern
+    </text>
+    <text x="235" y="328" font-size="12" text-anchor="middle" fill="#666">
+      Potentially problematic
+    </text>
+    
+    <path d="M 235 340 L 235 380" stroke="#ff9800" stroke-width="4" marker-end="url(#arrowyellow)"/>
+    
+    <rect x="120" y="390" width="230" height="80" fill="#ffe0b2" stroke="#ff9800" stroke-width="3" rx="8"/>
+    <text x="235" y="415" font-size="14" font-weight="bold" text-anchor="middle" fill="#e65100">
+      🔄 Route to Alternative
+    </text>
+    <text x="235" y="438" font-size="12" text-anchor="middle" fill="#666">
+      • Different agent with
+    </text>
+    <text x="235" y="455" font-size="12" text-anchor="middle" fill="#666">
+      • Different tools and approach
+    </text>
+  </g>
+  
+  <!-- Path 3: Validation Failed (Red) - Right -->
+  <g id="path-failed">
+    <path d="M 660 190 L 840 240" stroke="#f44336" stroke-width="5" marker-end="url(#arrowred)"/>
+    <text x="780" y="215" font-size="13" font-weight="bold" fill="#f44336">Failed</text>
+    
+    <rect x="760" y="250" width="230" height="90" fill="#ffebee" stroke="#f44336" stroke-width="4" rx="10"/>
+    <text x="875" y="280" font-size="28" text-anchor="middle" fill="#c62828">🚫</text>
+    <text x="875" y="305" font-size="16" font-weight="bold" text-anchor="middle" fill="#c62828">
+      Validation Failed
+    </text>
+    <text x="875" y="328" font-size="12" text-anchor="middle" fill="#666">
+      Critical error detected
+    </text>
+    
+    <path d="M 875 340 L 875 380" stroke="#f44336" stroke-width="4" marker-end="url(#arrowred)"/>
+    
+    <rect x="760" y="390" width="230" height="80" fill="#ffcdd2" stroke="#f44336" stroke-width="3" rx="8"/>
+    <text x="875" y="415" font-size="14" font-weight="bold" text-anchor="middle" fill="#b71c1c">
+      ⏪ Backtrack and Retry
+    </text>
+    <text x="875" y="438" font-size="12" text-anchor="middle" fill="#666">
+      • Explore alternative paths
+    </text>
+    <text x="875" y="455" font-size="12" text-anchor="middle" fill="#666">
+      • Escalate if persistent
+    </text>
+  </g>
+  
+  <!-- What Gets Red-Flagged Section -->
+  <g id="examples-section">
+    <text x="700" y="520" font-size="20" font-weight="bold" text-anchor="middle" fill="#1a1a1a">
+      What Gets Red-Flagged?
+    </text>
+    
+    <!-- Example Box 1 -->
+    <rect x="120" y="540" width="350" height="130" fill="#fff" stroke="#f44336" stroke-width="3" rx="10"/>
+    <text x="295" y="570" font-size="16" font-weight="bold" text-anchor="middle" fill="#c62828">
+      🚩 Inconsistent Output
+    </text>
+    <text x="140" y="600" font-size="13" text-anchor="start" fill="#666">
+      • Tool returns unexpected data type
+    </text>
+    <text x="140" y="622" font-size="13" text-anchor="start" fill="#666">
+      • Output contradicts previous context
+    </text>
+    <text x="140" y="644" font-size="13" text-anchor="start" fill="#666">
+      • Format doesn't match specification
+    </text>
+    <text x="140" y="666" font-size="13" text-anchor="start" fill="#666">
+      • Unexpected null or empty values
+    </text>
+    
+    <!-- Example Box 2 -->
+    <rect x="525" y="540" width="350" height="130" fill="#fff" stroke="#f44336" stroke-width="3" rx="10"/>
+    <text x="700" y="570" font-size="16" font-weight="bold" text-anchor="middle" fill="#c62828">
+      🚩 Semantic Violations
+    </text>
+    <text x="545" y="600" font-size="13" text-anchor="start" fill="#666">
+      • Logic errors in reasoning chain
+    </text>
+    <text x="545" y="622" font-size="13" text-anchor="start" fill="#666">
+      • Constraint violations detected
+    </text>
+    <text x="545" y="644" font-size="13" text-anchor="start" fill="#666">
+      • Impossible state transitions
+    </text>
+    <text x="545" y="666" font-size="13" text-anchor="start" fill="#666">
+      • Goal misalignment detected
+    </text>
+    
+    <!-- Example Box 3 -->
+    <rect x="930" y="540" width="350" height="130" fill="#fff" stroke="#f44336" stroke-width="3" rx="10"/>
+    <text x="1105" y="570" font-size="16" font-weight="bold" text-anchor="middle" fill="#c62828">
+      🚩 External Failures
+    </text>
+    <text x="950" y="600" font-size="13" text-anchor="start" fill="#666">
+      • API calls return errors or timeouts
+    </text>
+    <text x="950" y="622" font-size="13" text-anchor="start" fill="#666">
+      • Connection or network issues
+    </text>
+    <text x="950" y="644" font-size="13" text-anchor="start" fill="#666">
+      • Resource unavailability
+    </text>
+    <text x="950" y="666" font-size="13" text-anchor="start" fill="#666">
+      • Rate limits or quota exceeded
+    </text>
+  </g>
+  
+  <!-- Learning Feedback Loop -->
+  <g id="feedback-loop">
+    <rect x="200" y="700" width="1000" height="110" fill="#e8eaf6" stroke="#3f51b5" stroke-width="3" rx="10"/>
+    
+    <text x="700" y="730" font-size="18" font-weight="bold" text-anchor="middle" fill="#1a237e">
+      🔄 The Antifragile Advantage: Learning from Failures
+    </text>
+    
+    <text x="700" y="760" font-size="14" text-anchor="middle" fill="#3f51b5">
+      Failed attempts are stored and analyzed → System learns which approaches fail under which conditions
+    </text>
+    
+    <text x="700" y="785" font-size="14" text-anchor="middle" fill="#3f51b5">
+      Future tasks benefit from past error patterns → Red-flagging becomes smarter over time
+    </text>
+    
+    <text x="700" y="810" font-size="13" font-weight="bold" text-anchor="middle" fill="#1565c0">
+      Result: MAKER becomes MORE reliable with each error it encounters and corrects
+    </text>
+  </g>
+  
+  <!-- Bottom caption -->
+  <text x="700" y="845" font-size="13" text-anchor="middle" fill="#666">
+    Red-flagging catches errors proactively, routing tasks to correction loops before they cascade into catastrophic failures
+  </text>
+  
+  <!-- Arrow markers -->
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="11" refY="4" orient="auto">
+      <polygon points="0 0, 12 4, 0 8" fill="#666"/>
+    </marker>
+    <marker id="arrowgreen" markerWidth="12" markerHeight="12" refX="11" refY="4" orient="auto">
+      <polygon points="0 0, 12 4, 0 8" fill="#4caf50"/>
+    </marker>
+    <marker id="arrowyellow" markerWidth="12" markerHeight="12" refX="11" refY="4" orient="auto">
+      <polygon points="0 0, 12 4, 0 8" fill="#ff9800"/>
+    </marker>
+    <marker id="arrowred" markerWidth="12" markerHeight="12" refX="11" refY="4" orient="auto">
+      <polygon points="0 0, 12 4, 0 8" fill="#f44336"/>
+    </marker>
+  </defs>
+</svg>
