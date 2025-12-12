@@ -13,6 +13,8 @@ import { mdxComponents } from '@/components/MDXContent'
 import { generateMetadata as genMetadata } from '@/lib/metadata'
 import { SITE } from '@/lib/constants'
 import remarkGfm from 'remark-gfm'
+import remarkMath from 'remark-math'
+import rehypeKatex from 'rehype-katex'
 
 export async function generateStaticParams() {
   const locales: Locale[] = ['en', 'nl']
@@ -85,7 +87,8 @@ export default async function EssayPage({
             components={mdxComponents}
             options={{
               mdxOptions: {
-                remarkPlugins: [remarkGfm],
+                remarkPlugins: [remarkGfm, remarkMath],
+                rehypePlugins: [rehypeKatex],
               },
             }}
           />
