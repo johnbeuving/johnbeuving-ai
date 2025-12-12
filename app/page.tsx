@@ -86,7 +86,7 @@ export default function HomePage() {
         </h2>
         <div className="space-y-6">
           {essays.length > 0 ? (
-            essays.map((essay) => <EssayCard key={essay.slug} essay={essay} />)
+            essays.map((essay) => <EssayCard key={`${essay.locale}-${essay.slug}`} essay={essay} />)
           ) : (
             <p className="text-gray-500">No essays yet. Check back soon!</p>
           )}

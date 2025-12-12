@@ -1,0 +1,3 @@
+ALERT_PARAMETERS,QUERY_CONTEXT,SAVED_SEARCH_ID
+"{channels=[EMAIL, INAPP_NOTIFICATION], frequency=DAILY}","{keywords=chief technology officer, workflowContext={savedSearch=urn:li:savedSearch:1222063414}, searchLocation={com.linkedin.jobs.matching.SpecificSearchLocation={geoLocations=[{geo=urn:li:geo:101849429}]}}, facets={employmentStatuses={selectedValues=[FULL_TIME]}}}",1222063414
+"{channels=[EMAIL, INAPP_NOTIFICATION], frequency=DAILY}","{keywords=machine learning researcher, workflowContext={savedSearch=urn:li:savedSearch:1222063404}, searchLocation={com.linkedin.jobs.matching.SpecificSearchLocation={geoLocations=[{geo=urn:li:geo:101849429}]}}, facets={employmentStatuses={selectedValues=[FULL_TIME]}}}",1222063404

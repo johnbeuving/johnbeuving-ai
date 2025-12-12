@@ -1,0 +1,3 @@
+First Name,Last Name,Billing Country,Postal Code,Transaction Made At,Payment Method Type,Invoice Number,Description,Tax Amount,Sub Total,Total Amount,Currency Code
+John,Beuving,nl,,"8/10/24, 11:42 AM",SEPA DirectDebit,10459122564,Premium Business Subscription renewal (Monthly),9.11,43.38,52.49,EUR
+John,Beuving,nl,,"7/10/24, 11:43 AM",SEPA DirectDebit,9733293496,Premium Business Subscription (Monthly),0,0,0,EUR

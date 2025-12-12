@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import '@/styles/globals.css'
+import 'katex/dist/katex.min.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { generateMetadata as genMetadata } from '@/lib/metadata'

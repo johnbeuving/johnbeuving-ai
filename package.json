@@ -16,11 +16,14 @@
     "@mdx-js/react": "^3.0.0",
     "@next/mdx": "^16.0.7",
     "gray-matter": "^4.0.3",
+    "katex": "^0.16.27",
     "next": "^16.0.7",
     "next-mdx-remote": "^5.0.0",
     "react": "^19.2.1",
     "react-dom": "^19.2.1",
-    "remark-gfm": "^4.0.1"
+    "rehype-katex": "^7.0.1",
+    "remark-gfm": "^4.0.1",
+    "remark-math": "^6.0.0"
   },
   "devDependencies": {
     "@types/node": "^20.11.0",
