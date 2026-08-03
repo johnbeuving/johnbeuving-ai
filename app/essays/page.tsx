@@ -44,7 +44,10 @@ export default function EssaysPage() {
 
           {nlEssays.length > 0 && (
             <section>
-              <h2 className="mb-6 text-2xl font-semibold text-gray-900 sm:text-3xl">
+              <h2
+                lang="nl"
+                className="mb-6 text-2xl font-semibold text-gray-900 sm:text-3xl"
+              >
                 Nederlands
               </h2>
               <div className="space-y-4 sm:space-y-6">

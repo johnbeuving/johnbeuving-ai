@@ -11,12 +11,12 @@ export const metadata: Metadata = genMetadata({
 
 export default function ContactPage() {
   return (
-    <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6 sm:py-12">
+    <div className="mx-auto max-w-prose px-4 py-8 sm:px-6 sm:py-12">
       <h1 className="mb-6 text-3xl font-semibold text-gray-900 sm:mb-8 sm:text-4xl md:text-5xl">
         Contact
       </h1>
 
-      <div className="prose prose-sm sm:prose-base md:prose-lg max-w-none">
+      <div>
         <p className="mb-4 leading-relaxed text-gray-700 sm:mb-6">
           I'm always interested in connecting with others working on AI systems,
           real-world applications, and pushing the boundaries of what's possible
