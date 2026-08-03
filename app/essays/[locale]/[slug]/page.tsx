@@ -68,7 +68,10 @@ export default async function EssayPage({
     const { metadata, content } = getEssayBySlug(slug, locale)
 
     return (
-      <article className="mx-auto max-w-3xl px-4 py-8 sm:px-6 sm:py-12">
+      <article
+        lang={locale}
+        className="mx-auto max-w-prose px-4 py-8 sm:px-6 sm:py-12"
+      >
         <header className="mb-8 sm:mb-12">
           <h1 className="mb-3 text-2xl font-semibold text-gray-900 sm:mb-4 sm:text-3xl md:text-4xl lg:text-5xl">
             {metadata.title}
@@ -81,7 +84,7 @@ export default async function EssayPage({
           </p>
         </header>
 
-        <div className="prose prose-sm sm:prose-base md:prose-lg max-w-none">
+        <div>
           <MDXRemote
             source={content}
             components={mdxComponents}
