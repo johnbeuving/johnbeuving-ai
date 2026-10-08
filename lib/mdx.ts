@@ -48,7 +48,14 @@ export function getEssaySlugs(locale: Locale): string[] {
   return fs
     .readdirSync(localeDirectory)
     .filter((file) => file.endsWith('.mdx'))
+    .filter((file) => !isDraft(path.join(localeDirectory, file)))
     .map((file) => file.replace(/\.mdx$/, ''))
+}
+
+// Essays with `draft: true` in their frontmatter are not published
+function isDraft(fullPath: string): boolean {
+  const { data } = parseFrontmatter(fs.readFileSync(fullPath, 'utf8'))
+  return data.draft === true
 }
 
 export function getEssayBySlug(

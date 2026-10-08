@@ -1,0 +1,9 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    { "source": "/essays/en/ai-in-healthcare", "destination": "/essays", "permanent": true },
+    { "source": "/essays/en/radar-to-llms", "destination": "/essays", "permanent": true },
+    { "source": "/essays/en/real-world-ai", "destination": "/essays", "permanent": true },
+    { "source": "/essays/nl/ai-in-zorg", "destination": "/essays", "permanent": true }
+  ]
+}

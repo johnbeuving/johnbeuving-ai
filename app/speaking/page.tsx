@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { generateMetadata as genMetadata, pageTitle } from '@/lib/metadata'
 import { PAGE_DESCRIPTIONS, SITE } from '@/lib/constants'
 
@@ -69,8 +70,14 @@ export default function SpeakingPage() {
         </h2>
         <p className="mb-4 text-sm leading-relaxed text-gray-700 sm:text-base">
           I'm available for speaking engagements at conferences, workshops, and
-          corporate events. Please reach out through the contact page to discuss
-          your event.
+          corporate events. Please reach out through the{' '}
+          <Link
+            href="/contact"
+            className="text-blue-500 underline hover:text-blue-600"
+          >
+            contact page
+          </Link>{' '}
+          to discuss your event.
         </p>
       </div>
     </div>

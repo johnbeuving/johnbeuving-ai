@@ -7,7 +7,7 @@ export const SITE = {
   url: 'https://johnbeuving.ai',
   ogImage: 'https://johnbeuving.ai/og/default.png',
   linkedIn: 'https://www.linkedin.com/in/john-beuving-7716633/',
-  email: 'contact@johnbeuving.com',
+  email: 'contact@johnbeuving.ai',
 } as const
 
 // Page-specific descriptions
