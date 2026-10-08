@@ -1,8 +1,20 @@
 import fs from 'fs'
 import path from 'path'
-import matter from 'gray-matter'
+import yaml from 'js-yaml'
 
 const essaysDirectory = path.join(process.cwd(), 'content/essays')
+
+const frontmatterPattern = /^---[ \t]*\r?\n([\s\S]*?)\r?\n---[ \t]*(?:\r?\n|$)/
+
+// Splits a leading YAML frontmatter block from the body, like gray-matter did
+function parseFrontmatter(source: string): { data: Record<string, unknown>; content: string } {
+  const match = source.match(frontmatterPattern)
+  if (!match) {
+    return { data: {}, content: source }
+  }
+  const data = (yaml.load(match[1]) ?? {}) as Record<string, unknown>
+  return { data, content: source.slice(match[0].length) }
+}
 
 export type Locale = 'en' | 'nl'
 
@@ -45,7 +57,7 @@ export function getEssayBySlug(slug: string, locale: Locale): {
     throw new Error(`Essay not found: ${slug} in locale ${locale}`)
   }
   const fileContents = fs.readFileSync(fullPath, 'utf8')
-  const { data, content } = matter(fileContents)
+  const { data, content } = parseFrontmatter(fileContents)
 
   // Ensure date is always a string
   let dateString = ''
@@ -59,9 +71,9 @@ export function getEssayBySlug(slug: string, locale: Locale): {
 
   return {
     metadata: {
-      title: data.title || '',
+      title: data.title ? String(data.title) : '',
       date: dateString,
-      description: data.description || '',
+      description: data.description ? String(data.description) : '',
       slug,
       locale,
     },
