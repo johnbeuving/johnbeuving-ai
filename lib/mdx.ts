@@ -58,6 +58,13 @@ function isDraft(fullPath: string): boolean {
   return data.draft === true
 }
 
+// Locales in which an essay is published; a translation shares its slug
+export function getTranslations(slug: string): Locale[] {
+  return getAvailableLocales().filter((locale) =>
+    getEssaySlugs(locale).includes(slug)
+  )
+}
+
 export function getEssayBySlug(
   slug: string,
   locale: Locale

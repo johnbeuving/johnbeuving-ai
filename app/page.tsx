@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { getAllEssays } from '@/lib/mdx'
 import EssayCard from '@/components/EssayCard'
+import { JsonLd, person } from '@/components/JsonLd'
 import { generateMetadata as genMetadata } from '@/lib/metadata'
 import { SITE, CONTENT } from '@/lib/constants'
 
@@ -16,6 +17,15 @@ export default function HomePage() {
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6 sm:py-12">
+      <JsonLd
+        data={{
+          '@type': 'WebSite',
+          name: SITE.name,
+          url: SITE.url,
+          publisher: person,
+        }}
+      />
+      <JsonLd data={person} />
       <div className="mb-12 max-w-3xl sm:mb-16">
         <div className="mb-6 flex flex-col items-center gap-4 sm:flex-row sm:items-start sm:gap-6">
           <div className="shrink-0">
@@ -45,9 +55,9 @@ export default function HomePage() {
       <div className="mb-12 grid gap-4 sm:mb-16 sm:gap-6 md:grid-cols-3">
         <Link
           href="/essays"
-          className="group rounded-lg border border-gray-200 p-5 transition-colors hover:border-blue-500 sm:p-6"
+          className="group rounded-lg border border-gray-200 p-5 transition-colors hover:border-blue-700 sm:p-6"
         >
-          <h2 className="mb-2 text-lg font-semibold text-gray-900 transition-colors group-hover:text-blue-500 sm:text-xl">
+          <h2 className="mb-2 text-lg font-semibold text-gray-900 transition-colors group-hover:text-blue-700 sm:text-xl">
             Essays
           </h2>
           <p className="text-sm text-gray-600 sm:text-base">
@@ -57,9 +67,9 @@ export default function HomePage() {
 
         <Link
           href="/about"
-          className="group rounded-lg border border-gray-200 p-5 transition-colors hover:border-blue-500 sm:p-6"
+          className="group rounded-lg border border-gray-200 p-5 transition-colors hover:border-blue-700 sm:p-6"
         >
-          <h2 className="mb-2 text-lg font-semibold text-gray-900 transition-colors group-hover:text-blue-500 sm:text-xl">
+          <h2 className="mb-2 text-lg font-semibold text-gray-900 transition-colors group-hover:text-blue-700 sm:text-xl">
             About
           </h2>
           <p className="text-sm text-gray-600 sm:text-base">
@@ -69,9 +79,9 @@ export default function HomePage() {
 
         <Link
           href="/speaking"
-          className="group rounded-lg border border-gray-200 p-5 transition-colors hover:border-blue-500 sm:p-6"
+          className="group rounded-lg border border-gray-200 p-5 transition-colors hover:border-blue-700 sm:p-6"
         >
-          <h2 className="mb-2 text-lg font-semibold text-gray-900 transition-colors group-hover:text-blue-500 sm:text-xl">
+          <h2 className="mb-2 text-lg font-semibold text-gray-900 transition-colors group-hover:text-blue-700 sm:text-xl">
             Speaking
           </h2>
           <p className="text-sm text-gray-600 sm:text-base">

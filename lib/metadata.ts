@@ -8,6 +8,10 @@ interface GenerateMetadataOptions {
   ogImage?: string
   ogImageAlt?: string
   type?: 'website' | 'article'
+  publishedTime?: string
+  locale?: string
+  // Locale code → path, for pages published in more than one language
+  languages?: Record<string, string>
 }
 
 /**
@@ -20,6 +24,9 @@ export function generateMetadata({
   ogImage = SITE.ogImage,
   ogImageAlt = SITE.name,
   type = 'website',
+  publishedTime,
+  locale = 'en',
+  languages,
 }: GenerateMetadataOptions): Metadata {
   const url = `${SITE.url}${path}`
 
@@ -31,6 +38,12 @@ export function generateMetadata({
       description,
       type,
       url,
+      siteName: SITE.name,
+      locale: locale === 'nl' ? 'nl_NL' : 'en_US',
+      ...(type === 'article' && {
+        publishedTime,
+        authors: [SITE.url + '/about'],
+      }),
       images: [
         {
           url: ogImage,
@@ -48,6 +61,14 @@ export function generateMetadata({
     },
     alternates: {
       canonical: url,
+      ...(languages && {
+        languages: Object.fromEntries(
+          Object.entries(languages).map(([code, href]) => [
+            code,
+            `${SITE.url}${href}`,
+          ])
+        ),
+      }),
     },
   }
 }

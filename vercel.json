@@ -5,5 +5,12 @@
     { "source": "/essays/en/radar-to-llms", "destination": "/essays", "permanent": true },
     { "source": "/essays/en/real-world-ai", "destination": "/essays", "permanent": true },
     { "source": "/essays/nl/ai-in-zorg", "destination": "/essays", "permanent": true }
+  ],
+  "rewrites": [{ "source": "/favicon.ico", "destination": "/icon" }],
+  "headers": [
+    {
+      "source": "/(icon|apple-icon|favicon.ico)",
+      "headers": [{ "key": "Content-Type", "value": "image/png" }]
+    }
   ]
 }
