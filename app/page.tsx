@@ -33,7 +33,7 @@ export default function HomePage() {
               {SITE.name}
             </h1>
             <p className="mb-2 text-xl text-gray-600 sm:text-2xl md:text-3xl">
-              AI Systems Architect & CTO
+              {SITE.role}
             </p>
             <p className="text-base text-gray-500 sm:text-lg md:text-xl">
               {SITE.description}

@@ -4,7 +4,6 @@ import {
   getEssaySlugs,
   getEssayBySlug,
   getEssayFrontmatter,
-  getOGImagePath,
   formatDate,
   type Locale,
 } from '@/lib/mdx'
@@ -38,8 +37,7 @@ export async function generateMetadata({
   try {
     const { slug, locale } = await params
     const post = getEssayFrontmatter(slug, locale)
-    const ogImagePath = getOGImagePath(slug)
-    const ogImageUrl = `${SITE.url}${ogImagePath}`
+    const ogImageUrl = `${SITE.url}/og/${locale}-${slug}.png`
 
     return genMetadata({
       title: post.title,

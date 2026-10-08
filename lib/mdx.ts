@@ -131,14 +131,6 @@ export function getEssayFrontmatter(
   return metadata
 }
 
-export function getOGImagePath(slug: string): string {
-  const publicOgPath = path.join(process.cwd(), 'public', 'og', `${slug}.png`)
-  if (fs.existsSync(publicOgPath)) {
-    return `/og/${slug}.png`
-  }
-  return '/og/default.png'
-}
-
 export function formatDate(dateString: string, locale: Locale = 'en'): string {
   if (!dateString) return ''
   try {

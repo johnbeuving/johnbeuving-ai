@@ -1,7 +1,8 @@
 // Site-wide constants
 export const SITE = {
   name: 'John Beuving',
-  title: 'John Beuving — AI Systems Architect & CTO',
+  title: 'John Beuving — Founder & CTO, AI Systems Architect',
+  role: 'Founder & CTO · AI Systems Architect',
   description:
     'Building AI systems that bridge the physical world and intelligent models: from sensors and radar to multimodal and agentic AI.',
   url: 'https://johnbeuving.ai',
