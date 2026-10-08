@@ -64,42 +64,43 @@ export default async function EssayPage({
 }) {
   const { slug, locale } = await params
 
+  let essay: ReturnType<typeof getEssayBySlug>
   try {
-    const { metadata, content } = getEssayBySlug(slug, locale)
-
-    return (
-      <article
-        lang={locale}
-        className="mx-auto max-w-prose px-4 py-8 sm:px-6 sm:py-12"
-      >
-        <header className="mb-8 sm:mb-12">
-          <h1 className="mb-3 text-2xl font-semibold text-gray-900 sm:mb-4 sm:text-3xl md:text-4xl lg:text-5xl">
-            {metadata.title}
-          </h1>
-          <p className="mb-2 text-xs text-gray-500 sm:text-sm">
-            {formatDate(metadata.date, locale)}
-          </p>
-          <p className="text-base leading-relaxed text-gray-600 sm:text-lg">
-            {metadata.description}
-          </p>
-        </header>
-
-        <div>
-          <MDXRemote
-            source={content}
-            components={mdxComponents}
-            options={{
-              mdxOptions: {
-                remarkPlugins: [remarkGfm, remarkMath],
-                rehypePlugins: [rehypeKatex],
-              },
-            }}
-          />
-        </div>
-      </article>
-    )
+    essay = getEssayBySlug(slug, locale)
   } catch {
     notFound()
   }
-}
+  const { metadata, content } = essay
 
+  return (
+    <article
+      lang={locale}
+      className="mx-auto max-w-prose px-4 py-8 sm:px-6 sm:py-12"
+    >
+      <header className="mb-8 sm:mb-12">
+        <h1 className="mb-3 text-2xl font-semibold text-gray-900 sm:mb-4 sm:text-3xl md:text-4xl lg:text-5xl">
+          {metadata.title}
+        </h1>
+        <p className="mb-2 text-xs text-gray-500 sm:text-sm">
+          {formatDate(metadata.date, locale)}
+        </p>
+        <p className="text-base leading-relaxed text-gray-600 sm:text-lg">
+          {metadata.description}
+        </p>
+      </header>
+
+      <div>
+        <MDXRemote
+          source={content}
+          components={mdxComponents}
+          options={{
+            mdxOptions: {
+              remarkPlugins: [remarkGfm, remarkMath],
+              rehypePlugins: [rehypeKatex],
+            },
+          }}
+        />
+      </div>
+    </article>
+  )
+}

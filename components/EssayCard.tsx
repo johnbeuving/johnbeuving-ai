@@ -7,7 +7,7 @@ interface EssayCardProps {
 
 export default function EssayCard({ essay }: EssayCardProps) {
   const languageLabel = essay.locale === 'nl' ? 'NL' : 'EN'
-  
+
   return (
     <Link
       href={`/essays/${essay.locale}/${essay.slug}`}

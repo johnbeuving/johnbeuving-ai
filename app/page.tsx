@@ -80,13 +80,15 @@ export default function HomePage() {
         </Link>
       </div>
 
-      <div className="mb-8 mt-8 sm:mt-12">
+      <div className="mt-8 mb-8 sm:mt-12">
         <h2 className="mb-4 text-2xl font-semibold text-gray-900 sm:mb-6 sm:text-3xl">
           Latest Essays
         </h2>
         <div className="space-y-6">
           {essays.length > 0 ? (
-            essays.map((essay) => <EssayCard key={`${essay.locale}-${essay.slug}`} essay={essay} />)
+            essays.map((essay) => (
+              <EssayCard key={`${essay.locale}-${essay.slug}`} essay={essay} />
+            ))
           ) : (
             <p className="text-gray-500">No essays yet. Check back soon!</p>
           )}

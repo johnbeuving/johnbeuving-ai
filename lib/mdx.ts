@@ -7,7 +7,10 @@ const essaysDirectory = path.join(process.cwd(), 'content/essays')
 const frontmatterPattern = /^---[ \t]*\r?\n([\s\S]*?)\r?\n---[ \t]*(?:\r?\n|$)/
 
 // Splits a leading YAML frontmatter block from the body, like gray-matter did
-function parseFrontmatter(source: string): { data: Record<string, unknown>; content: string } {
+function parseFrontmatter(source: string): {
+  data: Record<string, unknown>
+  content: string
+} {
   const match = source.match(frontmatterPattern)
   if (!match) {
     return { data: {}, content: source }
@@ -48,7 +51,10 @@ export function getEssaySlugs(locale: Locale): string[] {
     .map((file) => file.replace(/\.mdx$/, ''))
 }
 
-export function getEssayBySlug(slug: string, locale: Locale): {
+export function getEssayBySlug(
+  slug: string,
+  locale: Locale
+): {
   metadata: EssayMetadata
   content: string
 } {
@@ -110,7 +116,10 @@ export function getAllEssays(locale?: Locale): EssayMetadata[] {
   })
 }
 
-export function getEssayFrontmatter(slug: string, locale: Locale): EssayMetadata {
+export function getEssayFrontmatter(
+  slug: string,
+  locale: Locale
+): EssayMetadata {
   const { metadata } = getEssayBySlug(slug, locale)
   return metadata
 }

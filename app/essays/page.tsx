@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { getAllEssays, type Locale } from '@/lib/mdx'
+import { getAllEssays } from '@/lib/mdx'
 import EssayCard from '@/components/EssayCard'
 import { generateMetadata as genMetadata, pageTitle } from '@/lib/metadata'
 import { PAGE_DESCRIPTIONS, CONTENT, SITE } from '@/lib/constants'

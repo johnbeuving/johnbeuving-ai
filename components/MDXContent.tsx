@@ -3,7 +3,7 @@ import { ComponentPropsWithoutRef } from 'react'
 export const mdxComponents = {
   h1: ({ children, className, ...props }: ComponentPropsWithoutRef<'h1'>) => (
     <h1
-      className={`mb-4 mt-6 wrap-break-word text-2xl font-semibold text-gray-900 sm:mb-6 sm:mt-8 sm:text-3xl md:text-4xl lg:text-5xl ${className || ''}`}
+      className={`mt-6 mb-4 text-2xl font-semibold wrap-break-word text-gray-900 sm:mt-8 sm:mb-6 sm:text-3xl md:text-4xl lg:text-5xl ${className || ''}`}
       {...props}
     >
       {children}
@@ -11,7 +11,7 @@ export const mdxComponents = {
   ),
   h2: ({ children, className, ...props }: ComponentPropsWithoutRef<'h2'>) => (
     <h2
-      className={`mb-3 mt-6 wrap-break-word text-xl font-semibold text-gray-900 sm:mb-4 sm:mt-8 sm:text-2xl md:text-3xl lg:text-4xl ${className || ''}`}
+      className={`mt-6 mb-3 text-xl font-semibold wrap-break-word text-gray-900 sm:mt-8 sm:mb-4 sm:text-2xl md:text-3xl lg:text-4xl ${className || ''}`}
       {...props}
     >
       {children}
@@ -19,7 +19,7 @@ export const mdxComponents = {
   ),
   h3: ({ children, className, ...props }: ComponentPropsWithoutRef<'h3'>) => (
     <h3
-      className={`mb-2 mt-4 wrap-break-word text-lg font-semibold text-gray-900 sm:mb-3 sm:mt-6 sm:text-xl md:text-2xl lg:text-3xl ${className || ''}`}
+      className={`mt-4 mb-2 text-lg font-semibold wrap-break-word text-gray-900 sm:mt-6 sm:mb-3 sm:text-xl md:text-2xl lg:text-3xl ${className || ''}`}
       {...props}
     >
       {children}
@@ -27,7 +27,7 @@ export const mdxComponents = {
   ),
   p: ({ children, className, ...props }: ComponentPropsWithoutRef<'p'>) => (
     <p
-      className={`mb-3 wrap-break-word leading-relaxed text-gray-700 sm:mb-4 ${className || ''}`}
+      className={`mb-3 leading-relaxed wrap-break-word text-gray-700 sm:mb-4 ${className || ''}`}
       {...props}
     >
       {children}
@@ -74,7 +74,7 @@ export const mdxComponents = {
     ...props
   }: ComponentPropsWithoutRef<'blockquote'>) => (
     <blockquote
-      className={`my-4 border-l-4 border-gray-300 pl-4 italic text-gray-600 ${className || ''}`}
+      className={`my-4 border-l-4 border-gray-300 pl-4 text-gray-600 italic ${className || ''}`}
       {...props}
     >
       {children}
@@ -86,7 +86,7 @@ export const mdxComponents = {
     ...props
   }: ComponentPropsWithoutRef<'code'>) => (
     <code
-      className={`wrap-break-word rounded-sm bg-gray-100 px-1.5 py-0.5 font-mono text-xs text-gray-800 sm:text-sm ${className || ''}`}
+      className={`rounded-sm bg-gray-100 px-1.5 py-0.5 font-mono text-xs wrap-break-word text-gray-800 sm:text-sm ${className || ''}`}
       {...props}
     >
       {children}
@@ -100,7 +100,11 @@ export const mdxComponents = {
       {children}
     </pre>
   ),
-  table: ({ children, className, ...props }: ComponentPropsWithoutRef<'table'>) => (
+  table: ({
+    children,
+    className,
+    ...props
+  }: ComponentPropsWithoutRef<'table'>) => (
     <div className="my-6 overflow-x-auto">
       <table
         className={`min-w-full divide-y divide-gray-200 border border-gray-300 ${className || ''}`}
@@ -110,13 +114,24 @@ export const mdxComponents = {
       </table>
     </div>
   ),
-  thead: ({ children, className, ...props }: ComponentPropsWithoutRef<'thead'>) => (
+  thead: ({
+    children,
+    className,
+    ...props
+  }: ComponentPropsWithoutRef<'thead'>) => (
     <thead className={`bg-gray-50 ${className || ''}`} {...props}>
       {children}
     </thead>
   ),
-  tbody: ({ children, className, ...props }: ComponentPropsWithoutRef<'tbody'>) => (
-    <tbody className={`divide-y divide-gray-200 bg-white ${className || ''}`} {...props}>
+  tbody: ({
+    children,
+    className,
+    ...props
+  }: ComponentPropsWithoutRef<'tbody'>) => (
+    <tbody
+      className={`divide-y divide-gray-200 bg-white ${className || ''}`}
+      {...props}
+    >
       {children}
     </tbody>
   ),
@@ -127,7 +142,7 @@ export const mdxComponents = {
   ),
   th: ({ children, className, ...props }: ComponentPropsWithoutRef<'th'>) => (
     <th
-      className={`px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-gray-700 sm:px-6 ${className || ''}`}
+      className={`px-4 py-3 text-left text-xs font-semibold tracking-wider text-gray-700 uppercase sm:px-6 ${className || ''}`}
       {...props}
     >
       {children}
@@ -141,12 +156,9 @@ export const mdxComponents = {
       {children}
     </td>
   ),
-  img: ({
-    src,
-    alt,
-    className,
-    ...props
-  }: ComponentPropsWithoutRef<'img'>) => (
+  img: ({ src, alt, className, ...props }: ComponentPropsWithoutRef<'img'>) => (
+    // MDX images carry no width/height, which next/image requires
+    // eslint-disable-next-line @next/next/no-img-element
     <img
       src={src}
       alt={alt || ''}
