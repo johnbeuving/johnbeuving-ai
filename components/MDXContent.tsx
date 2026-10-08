@@ -1,17 +1,18 @@
 import { ComponentPropsWithoutRef } from 'react'
 
 export const mdxComponents = {
-  h1: ({ children, className, ...props }: ComponentPropsWithoutRef<'h1'>) => (
-    <h1
-      className={`mt-6 mb-4 text-2xl font-semibold wrap-break-word text-gray-900 sm:mt-8 sm:mb-6 sm:text-3xl md:text-4xl lg:text-5xl ${className || ''}`}
+  // The essay title is the page's only <h1>, so a `#` heading in MDX renders as a section heading
+  h1: ({ children, className, ...props }: ComponentPropsWithoutRef<'h2'>) => (
+    <h2
+      className={`mt-8 mb-3 text-xl font-semibold wrap-break-word text-gray-900 sm:mt-10 sm:mb-4 sm:text-2xl ${className || ''}`}
       {...props}
     >
       {children}
-    </h1>
+    </h2>
   ),
   h2: ({ children, className, ...props }: ComponentPropsWithoutRef<'h2'>) => (
     <h2
-      className={`mt-6 mb-3 text-xl font-semibold wrap-break-word text-gray-900 sm:mt-8 sm:mb-4 sm:text-2xl md:text-3xl lg:text-4xl ${className || ''}`}
+      className={`mt-8 mb-3 text-xl font-semibold wrap-break-word text-gray-900 sm:mt-10 sm:mb-4 sm:text-2xl ${className || ''}`}
       {...props}
     >
       {children}
@@ -19,7 +20,7 @@ export const mdxComponents = {
   ),
   h3: ({ children, className, ...props }: ComponentPropsWithoutRef<'h3'>) => (
     <h3
-      className={`mt-4 mb-2 text-lg font-semibold wrap-break-word text-gray-900 sm:mt-6 sm:mb-3 sm:text-xl md:text-2xl lg:text-3xl ${className || ''}`}
+      className={`mt-6 mb-2 text-lg font-semibold wrap-break-word text-gray-900 sm:mt-8 sm:mb-3 sm:text-xl ${className || ''}`}
       {...props}
     >
       {children}
@@ -49,7 +50,7 @@ export const mdxComponents = {
   ),
   ul: ({ children, className, ...props }: ComponentPropsWithoutRef<'ul'>) => (
     <ul
-      className={`mb-4 list-inside list-disc space-y-2 text-gray-700 ${className || ''}`}
+      className={`mb-4 list-outside list-disc space-y-2 pl-5 text-gray-700 ${className || ''}`}
       {...props}
     >
       {children}
@@ -57,14 +58,14 @@ export const mdxComponents = {
   ),
   ol: ({ children, className, ...props }: ComponentPropsWithoutRef<'ol'>) => (
     <ol
-      className={`mb-4 list-inside list-decimal space-y-2 text-gray-700 ${className || ''}`}
+      className={`mb-4 list-outside list-decimal space-y-2 pl-5 text-gray-700 ${className || ''}`}
       {...props}
     >
       {children}
     </ol>
   ),
   li: ({ children, className, ...props }: ComponentPropsWithoutRef<'li'>) => (
-    <li className={`ml-4 ${className || ''}`} {...props}>
+    <li className={`pl-1 ${className || ''}`} {...props}>
       {children}
     </li>
   ),

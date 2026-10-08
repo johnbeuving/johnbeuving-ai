@@ -65,3 +65,10 @@
     @apply wrap-break-word;
   }
 }
+
+/* Wide equations scroll inside their own box instead of being clipped on narrow screens */
+.katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.25rem 0;
+}
