@@ -20,7 +20,7 @@ export default function EssayCard({ essay }: EssayCardProps) {
         >
           {essay.title}
         </h3>
-        <span className="rounded bg-gray-100 px-2 py-0.5 text-xs font-medium text-gray-600">
+        <span className="rounded-sm bg-gray-100 px-2 py-0.5 text-xs font-medium text-gray-600">
           {languageLabel}
         </span>
       </div>

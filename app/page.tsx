@@ -18,7 +18,7 @@ export default function HomePage() {
     <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6 sm:py-12">
       <div className="mb-12 max-w-3xl sm:mb-16">
         <div className="mb-6 flex flex-col items-center gap-4 sm:flex-row sm:items-start sm:gap-6">
-          <div className="flex-shrink-0">
+          <div className="shrink-0">
             <Image
               src="/profile.jpg"
               alt={SITE.name}
