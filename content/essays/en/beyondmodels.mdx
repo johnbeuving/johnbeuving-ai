@@ -53,7 +53,7 @@ When a red flag is raised, MAKER doesn't just retry the same approach. It can:
 - Escalate to a higher-level orchestrator for human review
 - Backtrack and explore alternative solution paths
 
-This makes MAKER antifragile: errors don't cascade, they trigger correction loops that make the system more robust.
+This makes MAKER antifragile: errors don't cascade; they trigger correction loops that make the system more robust.
 
 By combining extreme decomposition, validation gates, and proactive error detection, MAKER eliminates the failure cascade that normally destroys long workflows.
 
@@ -61,7 +61,7 @@ By combining extreme decomposition, validation gates, and proactive error detect
 
 **The shocking result:**
 
-MAKER completed 1,048,575 sequential steps on the Towers of Hanoi puzzle (20 disks) without an error. To put this in perspective: a single mistake at step 500,000 would invalidate the entire solution. Traditional LLM agents fail this task catastrophically they might succeed for 50 steps, maybe 500, but errors inevitably creep in and compound.
+MAKER completed 1,048,575 sequential steps on the Towers of Hanoi puzzle (20 disks) without an error. To put this in perspective: a single mistake at step 500,000 would invalidate the entire solution. Traditional LLM agents fail this task catastrophically: they might succeed for 50 steps, maybe 500, but errors inevitably creep in and compound.
 
 MAKER executed over a million steps with absolute precision and zero errors. This isn't an incremental update; it's a paradigm shift. It's the difference between building a **house of cards** (where one slip destroys everything) and engineering a **suspension bridge**.
 
@@ -101,7 +101,7 @@ Systems that interact with the physical world (radar, IoT, robotics, care homes)
 **Prediction 3 — Organizations will shift from model-first to system-first**
 
 Companies will realize that the real moat is the _architecture_, not the model.  
-Tooling, memory, tasks, logging, and orchestration will matter more than LLM raw performance.
+Tooling, memory, tasks, logging, and orchestration will matter more than raw LLM performance.
 
 **Prediction 4 — Healthcare and municipalities get modular, accountable AI**
 
@@ -118,7 +118,7 @@ If you're responsible for building AI systems in the next three years, MAKER for
 - You need **system architects**, not just ML engineers.
 - Your roadmap must include **orchestration**, **bounded agents**, and **error-correction loops**.
 - Pipelines must shift to **many simple agents** rather than one "genius" agent.
-- Metrics will evolve from model accuracy to  **pipeline reliability across long workflows**.
+- Metrics will evolve from model accuracy to **pipeline reliability across long workflows**.
 - RAG will evolve from document retrieval to **multi-agent reasoning with external tools**.
 - Testing and QA will be **agentic**, continuous, and dynamic.
 
@@ -144,7 +144,7 @@ The question for engineers, CTOs, and founders shifts from:
 > to  
 > **"Which architecture can survive a million decisions?"**
 
-If you're building real-world AI (care) systems, municipal workflows, radar intelligence, or multi-step data pipelines this shift is not optional.  It's already happening.
+If you're building real-world AI (care) systems, municipal workflows, radar intelligence, or multi-step data pipelines, this shift is not optional.  It's already happening.
 
 ---
 

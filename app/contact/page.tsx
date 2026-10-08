@@ -32,7 +32,7 @@ export default function ContactPage() {
           <p className="leading-relaxed text-gray-700">
             <a
               href={`mailto:${SITE.email}`}
-              className="break-all text-blue-500 underline hover:text-blue-600"
+              className="break-all text-blue-700 underline hover:text-blue-800"
             >
               {SITE.email}
             </a>
@@ -43,7 +43,7 @@ export default function ContactPage() {
               href={SITE.linkedIn}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-500 underline hover:text-blue-600"
+              className="text-blue-700 underline hover:text-blue-800"
             >
               LinkedIn
             </a>

@@ -11,12 +11,12 @@ export default function EssayCard({ essay }: EssayCardProps) {
   return (
     <Link
       href={`/essays/${essay.locale}/${essay.slug}`}
-      className="group block rounded-lg border border-gray-200 p-4 transition-colors hover:border-blue-500 sm:p-6"
+      className="group block rounded-lg border border-gray-200 p-4 transition-colors hover:border-blue-700 sm:p-6"
     >
       <div className="mb-2 flex items-center gap-2">
         <h3
           lang={essay.locale}
-          className="text-lg font-semibold text-gray-900 transition-colors group-hover:text-blue-500 sm:text-xl"
+          className="text-lg font-semibold text-gray-900 transition-colors group-hover:text-blue-700 sm:text-xl"
         >
           {essay.title}
         </h3>

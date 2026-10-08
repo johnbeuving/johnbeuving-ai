@@ -42,7 +42,7 @@ export const mdxComponents = {
   }: ComponentPropsWithoutRef<'a'>) => (
     <a
       href={href}
-      className={`wrap-break-word text-blue-500 underline hover:text-blue-600 ${className || ''}`}
+      className={`wrap-break-word text-blue-700 underline hover:text-blue-800 ${className || ''}`}
       {...props}
     >
       {children}
@@ -143,7 +143,8 @@ export const mdxComponents = {
   ),
   th: ({ children, className, ...props }: ComponentPropsWithoutRef<'th'>) => (
     <th
-      className={`px-4 py-3 text-left text-xs font-semibold tracking-wider text-gray-700 uppercase sm:px-6 ${className || ''}`}
+      scope="col"
+      className={`px-4 py-3 text-left text-sm font-semibold text-gray-900 sm:px-6 ${className || ''}`}
       {...props}
     >
       {children}

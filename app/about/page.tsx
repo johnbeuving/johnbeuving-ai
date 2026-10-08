@@ -58,7 +58,7 @@ export default function AboutPage() {
               href={SITE.linkedIn}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-500 underline hover:text-blue-600"
+              className="text-blue-700 underline hover:text-blue-800"
             >
               LinkedIn
             </a>

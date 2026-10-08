@@ -73,7 +73,7 @@ export default function SpeakingPage() {
           corporate events. Please reach out through the{' '}
           <Link
             href="/contact"
-            className="text-blue-500 underline hover:text-blue-600"
+            className="text-blue-700 underline hover:text-blue-800"
           >
             contact page
           </Link>{' '}

@@ -1,15 +1,43 @@
+import Link from 'next/link'
 import { SITE } from '@/lib/constants'
+
+const links = [
+  { href: '/essays', label: 'Essays' },
+  { href: '/about', label: 'About' },
+  { href: '/speaking', label: 'Speaking' },
+  { href: '/contact', label: 'Contact' },
+]
 
 export default function Footer() {
   return (
     <footer className="mt-12 border-t border-gray-200 py-6 sm:mt-24 sm:py-8">
       <div className="mx-auto max-w-4xl px-4 text-center sm:px-6">
+        <nav
+          aria-label="Footer"
+          className="mb-4 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm"
+        >
+          {links.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="text-gray-600 hover:text-gray-900"
+            >
+              {link.label}
+            </Link>
+          ))}
+        </nav>
         <div className="mb-4 flex items-center justify-center gap-4">
+          <a
+            href={`mailto:${SITE.email}`}
+            className="text-sm text-gray-600 hover:text-blue-700"
+          >
+            {SITE.email}
+          </a>
           <a
             href={SITE.linkedIn}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-500 transition-colors hover:text-blue-500"
+            className="text-gray-500 transition-colors hover:text-blue-700"
             aria-label="LinkedIn"
           >
             <svg
@@ -23,7 +51,7 @@ export default function Footer() {
           </a>
         </div>
         <p className="text-sm text-gray-500">
-          © {new Date().getFullYear()} {SITE.name}. All rights reserved.
+          © {new Date().getFullYear()} {SITE.name}
         </p>
       </div>
     </footer>

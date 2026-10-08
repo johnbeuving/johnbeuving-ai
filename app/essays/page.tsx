@@ -32,7 +32,7 @@ export default function EssaysPage() {
           {enEssays.length > 0 && (
             <section>
               <h2 className="mb-6 text-2xl font-semibold text-gray-900 sm:text-3xl">
-                English
+                In English
               </h2>
               <div className="space-y-4 sm:space-y-6">
                 {enEssays.map((essay) => (
@@ -48,7 +48,7 @@ export default function EssaysPage() {
                 lang="nl"
                 className="mb-6 text-2xl font-semibold text-gray-900 sm:text-3xl"
               >
-                Nederlands
+                In het Nederlands
               </h2>
               <div className="space-y-4 sm:space-y-6">
                 {nlEssays.map((essay) => (

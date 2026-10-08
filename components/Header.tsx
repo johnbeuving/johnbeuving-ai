@@ -1,11 +1,26 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { SITE } from '@/lib/constants'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const pathname = usePathname()
+
+  const isActive = (href: string) =>
+    pathname === href || pathname.startsWith(`${href}/`)
+
+  // Escape closes the mobile menu
+  useEffect(() => {
+    if (!isMenuOpen) return
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setIsMenuOpen(false)
+    }
+    document.addEventListener('keydown', onKeyDown)
+    return () => document.removeEventListener('keydown', onKeyDown)
+  }, [isMenuOpen])
 
   const navLinks = [
     { href: '/essays', label: 'Essays' },
@@ -19,7 +34,7 @@ export default function Header() {
       <nav className="mx-auto flex max-w-4xl items-center justify-between px-4 sm:px-6">
         <Link
           href="/"
-          className="text-lg font-semibold text-gray-900 transition-colors hover:text-blue-500 sm:text-xl"
+          className="text-lg font-semibold text-gray-900 transition-colors hover:text-blue-700 sm:text-xl"
         >
           {SITE.name}
         </Link>
@@ -30,7 +45,8 @@ export default function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm text-gray-600 transition-colors hover:text-gray-900 sm:text-base"
+              aria-current={isActive(link.href) ? 'page' : undefined}
+              className="text-sm text-gray-600 transition-colors hover:text-gray-900 aria-[current=page]:font-medium aria-[current=page]:text-gray-900 sm:text-base"
             >
               {link.label}
             </Link>
@@ -43,6 +59,7 @@ export default function Header() {
           className="flex h-10 w-10 items-center justify-center rounded-md text-gray-600 transition-colors hover:bg-gray-100 hover:text-gray-900 sm:hidden"
           aria-label="Toggle menu"
           aria-expanded={isMenuOpen}
+          aria-controls="mobile-nav"
         >
           <svg
             className="h-6 w-6"
@@ -64,13 +81,17 @@ export default function Header() {
 
       {/* Mobile Navigation Menu */}
       {isMenuOpen && (
-        <div className="mx-auto max-w-4xl border-t border-gray-200 px-4 py-4 sm:hidden">
+        <div
+          id="mobile-nav"
+          className="mx-auto max-w-4xl border-t border-gray-200 px-4 py-4 sm:hidden"
+        >
           <div className="flex flex-col gap-3">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setIsMenuOpen(false)}
+                aria-current={isActive(link.href) ? 'page' : undefined}
                 className="block rounded-md px-3 py-2 text-base text-gray-600 transition-colors hover:bg-gray-100 hover:text-gray-900"
               >
                 {link.label}
